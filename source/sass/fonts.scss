@@ -1,0 +1,71 @@
+@font-face {
+  font-family: "Cormorant Garamond";
+  font-weight: 400;
+  font-style: normal;
+  src: url("../fonts/cormorant-garamond.woff2") format("woff2"), url("../fonts/cormorant-garamond.woff") format("woff");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Cormorant Garamond";
+  font-weight: 400;
+  font-style: italic;
+  src: url("../fonts/cormorant-garamond-italic.woff2") format("woff2"), url("../fonts/cormorant-garamond-medium-italic.woff") format("woff");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Cormorant Garamond";
+  font-weight: 500;
+  font-style: normal;
+  src: url("../fonts/cormorant-garamond-medium.woff2") format("woff2"), url("../fonts/cormorant-garamond-medium.woff") format("woff");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Cormorant Garamond";
+  font-weight: 500;
+  font-style: italic;
+  src: url("../fonts/cormorant-garamond-medium-italic.woff2") format("woff2"), url("../fonts/cormorant-garamond-medium-italic.woff") format("woff");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Cormorant Garamond";
+  font-weight: 600;
+  font-style: normal;
+  src: url("../fonts/cormorant-garamond-semi-bold.woff2") format("woff2"), url("../fonts/cormorant-garamond-semi-bold.woff") format("woff");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Cormorant Garamond";
+  font-weight: 700;
+  font-style: normal;
+  src: url("../fonts/cormorant-garamond-bold.woff2") format("woff2"), url("../fonts/cormorant-garamond-bold.woff") format("woff");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Poppins";
+  font-weight: 400;
+  font-style: normal;
+  src: url("../fonts/poppins.woff2") format("woff2"), url("../fonts/poppins.woff") format("woff");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Poppins";
+  font-weight: 500;
+  font-style: normal;
+  src: url("../fonts/poppins-medium.woff2") format("woff2"), url("../fonts/poppins-medium.woff") format("woff");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Poppins";
+  font-weight: 700;
+  font-style: normal;
+  src: url("../fonts/poppins-bold.woff2") format("woff2"), url("../fonts/poppins-bold.woff") format("woff");
+  font-display: swap;
+}
