@@ -33,6 +33,10 @@
   transform: translateX(-50%);
 }
 
+.header__logo-image {
+  fill: $brown;
+}
+
 .header__tools {
   width: 119px;
   display: flex;
@@ -40,7 +44,7 @@
   flex-wrap: wrap;
 }
 
-.header__container nav {
+.header__navigation {
   border-top: 1px solid $border-gray;
 }
 
@@ -71,7 +75,7 @@
   color: $black;
 
   &:hover {
-    color: $black-hover;
+    opacity: 0.6;
   }
 
   &:active {
@@ -87,7 +91,7 @@
   color: $black;
 
   &:hover {
-    color: $black-hover;
+    opacity: 0.6;
   }
 
   &:active {
@@ -105,12 +109,14 @@
   align-items: center;
   justify-content: center;
   color: $white;
-  min-height: 471px;
+  min-height: 463px;
   margin-top: 18px;
   background-image: url("../img/banner.png");
   background-size: 1366px 471px;
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: center 0px;
+  background-color: rgba(86, 64, 52, 0.7);
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 
   @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
     background-image: url("../img/banner@2x.png");
@@ -124,6 +130,7 @@
   line-height: 44px;
   letter-spacing: 0.03em;
   margin: 0;
+  padding-top: 7px;
 }
 
 .header__banner p {
@@ -140,6 +147,15 @@
     padding-top: 53px;
     padding-bottom: 133px;
     position: relative;
+
+    &--close-nav {
+      padding-bottom: 55px;
+    }
+
+    &--nav-opened {
+      background-color: $brown;
+      padding-bottom: 133px;
+    }
   }
 
   .header__nav-btn {
@@ -149,12 +165,43 @@
     left: 38px;
     background-color: transparent;
     border: 0;
+    visibility: hidden;
+
+    &--close-nav {
+      visibility: visible;
+    }
+  }
+
+  .header__nav-btn-img {
+    stroke: $black;
+
+    &--nav-opened {
+      stroke: $white;
+    }
+  }
+
+  .header__logo-image {
+    fill: $brown;
+
+    &--nav-opened {
+      fill: $white;
+    }
   }
 
   .header__search {
     position: absolute;
     bottom: 10px;
     left: 46px;
+    box-sizing: border-box;
+    width: 90%;
+
+    &--close-nav {
+      display: none;
+    }
+
+    &--nav-opened {
+      display: block;
+    }
   }
 
   .header__search input {
@@ -163,8 +210,11 @@
     position: relative;
     padding-top: 8px;
     padding-bottom: 9px;
-    width: 678px;
+    width: 98%;
     box-sizing: border-box;
+    padding-left: 40px;
+    background-color: rgba(255, 255, 255, 0.15);
+    border: 1px solid $black;
 
     &::placeholder {
       font-size: 0;
@@ -173,9 +223,14 @@
 
   .header__search-icon {
     position: absolute;
-    top: 12px;
+    top: 10px;
     left: 11px;
     z-index: 1;
+    fill: $black;
+
+    &--nav-opened {
+      fill: $white;
+    }
   }
 
   .header__container a {
@@ -183,9 +238,23 @@
     line-height: 36px;
   }
 
-  .header__container nav {
+  .header__navigation {
     border-top: none;
     padding-top: 36px;
+    padding-bottom: 53px;
+
+    &--close-nav {
+      display: none;
+    }
+
+    &--nav-opened {
+      z-index: 9;
+      display: block;
+      background-color: $brown;
+      position: absolute;
+      width: 100%;
+      height: 100vh;
+    }
   }
 
   .header__container ul {
@@ -193,6 +262,8 @@
     margin-left: 0px;
     margin-top: 0;
     padding-left: 45px;
+    width: 90%;
+    box-sizing: border-box;
   }
 
   .header__container ul:last-of-type {
@@ -204,15 +275,11 @@
   .header__add-nav a {
     font-size: 18px;
     line-height: 23px;
-    color: $black-hover;
+    color: $black;
   }
 
   .header__add-nav-login {
     margin-top: 44px;
-  }
-
-  .header__add-nav-login a {
-    color: red;
   }
 
   .header__container li {
@@ -230,9 +297,114 @@
   .header__tools-cart-image {
     display: block;
     fill: transparent;
+    stroke: $black;
+
+    &--nav-opened {
+      stroke: $white;
+    }
 
     &:hover {
       opacity: 0.6;
     }
+  }
+
+  .header__banner {
+    background-position: 43% center;
+    min-height: 463px;
+    background-size: 1320px 479px;
+  }
+
+  .header__banner h1 {
+    width: 303px;
+    padding-top: 5px;
+  }
+
+  .header__banner p {
+    width: 247px;
+  }
+}
+
+@media (max-width: $mobile) {
+  .header__nav-btn {
+    top: 36px;
+    left: 8px;
+  }
+
+  .header__logo {
+    top: 20px;
+  }
+
+  .header__logo-image {
+    width: 52px;
+    height: 52px;
+  }
+
+  .header__tools a {
+    right: 14px;
+    top: 36px;
+  }
+
+  .header__user-tools {
+    &--close-nav {
+      padding-bottom: 21px;
+    }
+
+    &--nav-opened {
+      padding-bottom: 97px;
+    }
+  }
+
+  .header__search {
+    bottom: 8px;
+    left: 15px;
+    width: 92.5%;
+  }
+
+  .header__search-icon {
+    top: 12px;
+    left: 12px;
+  }
+
+  .header__search input {
+    padding-top: 10px;
+    padding-bottom: 9px;
+  }
+
+  .header__navigation {
+    padding-top: 28px;
+  }
+
+  .header__container ul {
+    padding-left: 4.58%;
+  }
+
+  .header__container ul:last-of-type {
+    padding-top: 9px;
+  }
+
+  .header__add-nav-login {
+    margin-top: 33px;
+  }
+
+  .header__banner {
+    background-image: url("../img/banner-tablet.png");
+    background-size: 768px 463px;
+    background-position: 39% center;
+
+    @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+      background-image: url("../img/banner-tablet@2x.png");
+    }
+  }
+
+  .header__banner h1 {
+    font-size: 38px;
+    line-height: 38px;
+    width: 240px;
+  }
+
+  .header__banner p {
+    font-size: 34px;
+    line-height: 44px;
+    width: 205px;
   }
 }
