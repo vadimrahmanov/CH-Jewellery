@@ -153,7 +153,7 @@ svg.footer__social-medias-fb-icon {
   }
 
   .footer__subscription {
-    margin-left: 45px;
+    margin-left: 5.9%;
     width: 73%;
   }
 
@@ -176,11 +176,77 @@ svg.footer__social-medias-fb-icon {
 
   .footer__navigation {
     padding-top: 46px;
-    margin-left: 45px;
+    margin-left: 5.9%;
     width: 74.5%;
   }
 
   .footer__nav-info {
     margin-right: 15%;
+  }
+}
+
+@media (max-width: $mobile) {
+  .footer__subscription {
+    margin-left: 4.5%;
+    width: 90.6%;
+  }
+
+  .footer__subscription h2 {
+    padding-bottom: 13px;
+    padding-right: 46px;
+  }
+
+  .footer__subscription h3 {
+    padding-right: 43px;
+  }
+
+  .footer__subscription form {
+    padding-bottom: 7px;
+    padding-top: 42px;
+  }
+
+  .footer__subscription input {
+    width: 60%;
+  }
+
+  .footer__subscription button {
+    padding-left: 0;
+    padding-right: 27px;
+  }
+
+  .footer__navigation {
+    flex-direction: column;
+    margin-left: 4.5%;
+  }
+
+  .footer__navigation svg {
+    top: 8px;
+    width: 20px;
+    height: 20px;
+  }
+
+  .footer__nav-info {
+    margin-bottom: 20px;
+  }
+
+  .footer__social-medias {
+    margin-left: 0;
+    display: flex;
+    list-style-type: none;
+    flex-wrap: wrap;
+  }
+
+  .footer__social-medias li {
+    margin-right: 17px;
+  }
+
+  .footer__social-medias a {
+    font-size: 0;
+  }
+
+  svg.footer__social-medias-fb-icon {
+    left: 1px;
+    width: 12px;
+    height: 21px;
   }
 }
