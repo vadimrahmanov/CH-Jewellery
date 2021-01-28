@@ -36,4 +36,37 @@ navBtn.addEventListener('click', function () {
   search.classList.toggle('header__search--nav-opened');
   navigation.classList.toggle('header__navigation--nav-opened');
   cartImg.classList.toggle('header__tools-cart-image--nav-opened');
+}); // eslint-disable-next-line no-undef
+
+var mainSlider = $('.new-in__slider');
+mainSlider.addClass('owl-carousel').owlCarousel({
+  items: 4,
+  loop: true,
+  margin: 31,
+  autoplay: false,
+  autoplayTimeout: 3000,
+  autoplayHoverPause: true,
+  nav: true,
+  slideBy: 4,
+  mouseDrag: false,
+  touchDrag: true,
+  pullDrag: false,
+  navElement: 'button',
+  slideTransition: '',
+  loadedClass: 'new-in__slider--loaded',
+  info: true,
+  dots: true,
+  navContainerClass: 'new-in__pagination',
+  navClass: ['new-in__pagination-previous', 'new-in__pagination-next'],
+  dotsClass: 'new-in__slider-page-nav',
+  dotClass: true,
+  responsive: {
+    0: {
+      items: 2
+    },
+    1024: {
+      items: 4
+    }
+  }
 });
+mainSlider.owlCarousel();

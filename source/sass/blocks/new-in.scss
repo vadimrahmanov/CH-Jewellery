@@ -1,0 +1,153 @@
+.new-in {
+  margin-top: 120px;
+}
+
+.new-in__container {
+  max-width: 1366px;
+  margin: 0 auto;
+}
+
+.new-in__container h2 {
+  font-family: $cormorant;
+  font-weight: 700;
+  font-size: 34px;
+  line-height: 44px;
+  color: $black;
+  text-align: center;
+  margin: 0;
+}
+
+.new-in__pagination {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  top: -71px;
+  left: -1.9%;
+
+  span {
+    display: block;
+    font-size: 0;
+    width: 29px;
+    height: 9px;
+  }
+}
+
+.new-in__pagination button {
+  background-color: transparent;
+  border: none;
+}
+
+.new-in__pagination-previous span {
+  background-image: url("../img/arrow-left-icon.svg");
+}
+
+.new-in__pagination-next span {
+  background-image: url("../img/arrow-right-icon.svg");
+}
+
+.new-in__pagination svg {
+  stroke: $brown;
+}
+
+.new-in__shop-now {
+  display: flex;
+  justify-content: center;
+  margin-top: 23px;
+}
+
+.new-in__shop-now a {
+  font-family: $poppins;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 21px;
+  color: $black;
+  border-bottom: 1px solid $brown;
+
+  &:hover {
+    opacity: 0.6;
+  }
+
+  &:active {
+    opacity: 0.4;
+  }
+}
+
+.new-in__slider {
+  @include list-reset;
+  display: flex;
+  margin-top: 30px;
+  margin-left: 7.2%;
+  margin-right: 7.2%;
+  width: 88.3%;
+  flex-wrap: wrap;
+  position: relative;
+  padding-bottom: 67px;
+  margin-bottom: 45px;
+
+  &--loaded {
+    width: 88%;
+    margin-top: 21px;
+    flex-direction: column-reverse;
+    flex-wrap: nowrap;
+  }
+}
+
+.new-in__slide {
+  margin-right: 2.6%;
+  margin-top: 30px;
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.new-in__slide a {
+  &:hover {
+    opacity: 0.7;
+  }
+
+  &:active {
+    opacity: 0.3;
+  }
+}
+
+.new-in__slide h3 {
+  font-family: $poppins;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 21px;
+  color: $black;
+  margin: 0;
+  text-align: center;
+  padding-top: 17px;
+}
+
+.new-in__slide p {
+  font-family: $poppins;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 18px;
+  color: $black;
+  margin: 0;
+  text-align: center;
+  padding-top: 6px;
+}
+
+.new-in__product-image {
+  width: 100%;
+  height: 100%;
+}
+
+.new-in__slider-page-nav {
+  display: flex;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+@media (max-width: $tablet) {
+  .new-in__product-image {
+    width: 324px;
+  }
+}
