@@ -11,6 +11,8 @@ var navigation = document.querySelector('.header__navigation');
 var addNav = document.querySelectorAll('.header__add-nav a');
 var addNavLogin = document.querySelector('.header__add-nav-login a');
 var cartImg = document.querySelector('.header__tools-cart-image');
+var faqItem = document.querySelectorAll('.faq__list li');
+var faqText = document.querySelectorAll('.faq__list p');
 
 navBtn.classList.add('header__nav-btn--close-nav');
 userTools.classList.add('header__user-tools--close-nav');
@@ -36,12 +38,27 @@ navBtn.addEventListener('click', function () {
   cartImg.classList.toggle('header__tools-cart-image--nav-opened');
 });
 
+for (var i = 0; i < faqItem.length; i++) {
+  faqText[i].classList.add('faq-hidden');
+  faqItem[i].addEventListener('click', function (evt) {
+    evt.preventDefault();
+    evt.currentTarget.classList.toggle('faq-visible-li');
+    evt.currentTarget.querySelector('p').classList.toggle('faq-visible');
+  });
+  faqItem[i].addEventListener('keydown', function (evt) {
+    if (evt.key === 'Enter') {
+      evt.preventDefault();
+      evt.currentTarget.classList.toggle('faq-visible-li');
+      evt.currentTarget.querySelector('p').classList.toggle('faq-visible');
+    }
+  });
+}
+
 // eslint-disable-next-line no-undef
 var mainSlider = $('.new-in__slider');
 mainSlider.addClass('owl-carousel').owlCarousel({
   items: 4,
   loop: true,
-  margin: 31,
   autoplay: false,
   autoplayTimeout: 3000,
   autoplayHoverPause: true,
@@ -62,6 +79,8 @@ mainSlider.addClass('owl-carousel').owlCarousel({
   responsive: {
     0: {
       items: 2,
+      margin: 30,
+      mouseDrag: true
     },
     1024: {
       items: 4

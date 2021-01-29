@@ -134,6 +134,10 @@
   margin-right: 12.3%;
 }
 
+.footer__nav-company li {
+  padding-right: 25px;
+}
+
 .footer__social-medias {
   margin-left: auto;
 }
@@ -182,6 +186,10 @@ svg.footer__social-medias-fb-icon {
 
   .footer__nav-info {
     margin-right: 15%;
+  }
+
+  .footer__nav-company li {
+    padding-right: 0;
   }
 }
 
