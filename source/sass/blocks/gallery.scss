@@ -1,0 +1,184 @@
+.gallery {
+  margin-top: 80px;
+}
+
+.gallery__container {
+  max-width: 1366px;
+  margin: 0 auto;
+}
+
+.gallery__container h2 {
+  font-family: $cormorant;
+  font-size: 34px;
+  font-weight: 700;
+  line-height: 44px;
+  letter-spacing: 0.03em;
+  color: $black;
+  text-align: center;
+}
+
+.gallery__follow-us {
+  display: flex;
+  justify-content: center;
+  padding-top: 2px;
+}
+
+.gallery__follow-us a {
+  font-family: $poppins;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 21px;
+  color: $black;
+  border-bottom: 1px solid $brown;
+  padding-bottom: 4px;
+}
+
+.gallery__content {
+  display: flex;
+  width: 87%;
+  margin-left: 7.2%;
+  margin-right: 7.2%;
+  margin-top: 60px;
+}
+
+.gallery__content-container {
+  &--first-group {
+    margin-right: 2.5%;
+  }
+
+  &--second-group {
+    margin-left: 2.5%;
+    margin-right: 2.51%;
+  }
+}
+
+.gallery__content-item img {
+  width: 100%;
+  height: 98.9%;
+}
+
+.gallery__content-item {
+  margin-bottom: 26px;
+
+  &--hands-rings {
+    margin-left: -6%;
+  }
+
+  &--hands-rings img {
+    width: 94.3%;
+  }
+
+  &--earrings {
+    margin-bottom: 25px;
+  }
+
+  &--earrings img {
+    width: 94.3%;
+  }
+
+  &--necklace-rings img {
+    width: 94%;
+  }
+}
+
+@media (max-width: $tablet) {
+  .gallery {
+    margin-top: 44px;
+  }
+
+  .gallery__container h2 {
+    margin-bottom: 17px;
+  }
+
+  .gallery__content {
+    width: 678px;
+    margin: 0 auto;
+    margin-top: 60px;
+  }
+
+  .gallery__content-container {
+    &--first-group {
+      margin-right: 20px;
+    }
+
+    &--second-group {
+      margin-left: 20px;
+      margin-right: 11px;
+    }
+  }
+
+  .gallery__content-item {
+    margin-bottom: 15px;
+
+    &--hands-rings {
+      margin-left: -1px;
+    }
+
+    &--hands-rings img {
+      width: 134px;
+    }
+
+    &--earrings {
+      margin-left: 7px;
+      margin-bottom: 14px;
+    }
+
+    &--earrings img {
+      width: 126px;
+    }
+  }
+}
+
+@media (max-width: $mobile) {
+  .gallery {
+    margin-top: 28px;
+  }
+
+  .gallery__content {
+    width: 290px;
+    flex-wrap: wrap;
+    margin-top: 46px;
+  }
+
+  .gallery__content-container {
+    &--first-group {
+      margin-right: 15px;
+    }
+
+    &--second-group {
+      display: flex;
+      margin-left: 0;
+      margin-right: 0;
+      flex-direction: row-reverse;
+      width: 290px;
+      justify-content: space-between;
+    }
+
+    &--third-group {
+      display: none;
+    }
+  }
+
+  .gallery__content-item img {
+    width: 130px;
+    height: auto;
+  }
+
+  .gallery__content-item {
+    margin-bottom: 11px;
+
+    &--woman img {
+      width: 145px;
+      height: 226px;
+    }
+
+    &--hand-ring-bracelet {
+      margin-top: -6px;
+    }
+
+    &--hand-ring-bracelet img {
+      width: 145px;
+      height: 121px;
+    }
+  }
+}

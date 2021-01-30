@@ -1,5 +1,6 @@
 .footer {
   background-color: #000000;
+  margin-top: 100px;
 }
 
 .footer__container {
@@ -7,7 +8,7 @@
   margin: 0 auto;
   display: flex;
   padding-top: 90px;
-  padding-bottom: 100px;
+  padding-bottom: 57px;
 }
 
 .footer__subscription {
@@ -151,9 +152,14 @@ svg.footer__social-medias-fb-icon {
 }
 
 @media (max-width: $tablet) {
+  .footer {
+    margin-top: 61px;
+  }
+
   .footer__container {
     flex-direction: column;
     padding-top: 50px;
+    padding-bottom: 18px;
   }
 
   .footer__subscription {
@@ -194,6 +200,14 @@ svg.footer__social-medias-fb-icon {
 }
 
 @media (max-width: $mobile) {
+  .footer {
+    margin-top: 55px;
+  }
+
+  .footer__container {
+    padding-bottom: 31px;
+  }
+
   .footer__subscription {
     margin-left: 4.5%;
     width: 90.6%;
