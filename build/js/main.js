@@ -14,6 +14,9 @@ var addNavLogin = document.querySelector('.header__add-nav-login a');
 var cartImg = document.querySelector('.header__tools-cart-image');
 var faqItem = document.querySelectorAll('.faq__list li');
 var faqText = document.querySelectorAll('.faq__list p');
+var filterTrigger = document.querySelectorAll('.catalog__filter-form h3');
+var filterSection = document.querySelectorAll('.catalog__filter-section');
+var filterInputs = document.querySelectorAll('.catalog__filter-inputs');
 navBtn.classList.add('header__nav-btn--close-nav');
 userTools.classList.add('header__user-tools--close-nav');
 search.classList.add('header__search--close-nav');
@@ -54,6 +57,25 @@ for (var i = 0; i < faqItem.length; i++) {
       evt.currentTarget.querySelector('p').classList.toggle('faq-visible');
     }
   });
+}
+
+function onClick(event, secEl, inpEl) {
+  event.preventDefault();
+  secEl.classList.toggle('catalog__filter-section--opened');
+  inpEl.classList.toggle('filter-visible');
+}
+
+var _loop = function _loop() {
+  var secEl = filterSection[j];
+  var inpEl = filterInputs[j];
+  filterInputs[j].classList.add('filter-hidden');
+  filterTrigger[j].addEventListener('click', function (e) {
+    onClick(e, secEl, inpEl);
+  });
+};
+
+for (var j = 0; j < filterTrigger.length; j++) {
+  _loop();
 } // eslint-disable-next-line no-undef
 
 
