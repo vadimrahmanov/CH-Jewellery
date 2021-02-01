@@ -86,8 +86,12 @@
       <h2 class="visually-hidden">Catalog</h2>
       <div class="catalog__container">
         <div class="catalog__content-container">
-          <div class="catalog__filter">
+          <button class="catalog__content-filter-trigger" type="button">Filter</button>
+          <div class="catalog__filter catalog__filter--visible">
             <form class="catalog__filter-form">
+              <button class="catalog__filter-close-btn">
+                <span class="visually-hidden">Open/Close filter</span>
+              </button>
               <h3 class="trigger" tabindex="0">Product</h3>
               <div class="catalog__filter-section catalog__filter-section--opened">
                 <div class="catalog__filter-inputs filter-visible">
@@ -144,14 +148,16 @@
                 </div>
               </div>
               <h3 class="trigger" tabindex="0">Price</h3>
-              <div class="catalog__filter-section">
-                <div class="catalog__filter-inputs">
-                  <label>
-                    <input type="checkbox" name="products" value="Necklaces">
-                    Necklaces
+              <div class="catalog__filter-section catalog__filter-section--range catalog__filter-section--opened">
+                <div class="catalog__filter-inputs filter-visible">
+                  <div id="slider-range"></div>
+                  <label class="catalog__filter-inputs-range-label" for="amount">
+                    <input class="catalog__filter-inputs-range" type="text" id="amount" name="products" value="price" readonly="">
                   </label>
                 </div>
               </div>
+              <button type="submit">Apply</button>
+              <button type="button">Clear All</button>
             </form>
           </div>
           <div class="catalog__products-container">
@@ -250,8 +256,8 @@
               <article>
                 <a href="">
                   <picture>
-                    <source type="image/webp" srcset="img/purple-gemstone-necklace.webp 1x">
-                    <img class="catalog__product-image" src="img/purple-gemstone-necklace.png" width="270" height="272" alt="Necklace with amethyst picture">
+                    <source type="image/webp" srcset="img/purple-gemstone-necklace-catalog.webp 1x">
+                    <img class="catalog__product-image" src="img/purple-gemstone-necklace-catalog.png" width="270" height="272" alt="Necklace with amethyst picture">
                     <!--Size: 270x272 / Retina Size: 540x544-->
                   </picture>
                 </a>
@@ -327,7 +333,7 @@
       </div>
     </section>
   </main>
-  <footer class="footer">
+  <footer class="footer footer--catalog">
     <div class="footer__container">
       <div class="footer__subscription">
         <h2>The good stuff in your inbox</h2>

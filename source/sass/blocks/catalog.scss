@@ -10,9 +10,17 @@
   display: flex;
 }
 
+.catalog__content-filter-trigger {
+  display: none;
+}
+
 .catalog__filter-form {
-  border: 1px solid $brown;
-  width: 248px;
+  width: 250px;
+  border-top: 1px solid $brown;
+}
+
+.catalog__filter-close-btn {
+  display: none;
 }
 
 .catalog__filter-form h3 {
@@ -26,6 +34,8 @@
   padding-bottom: 23px;
   padding-left: 24px;
   cursor: pointer;
+  border-left: 1px solid $brown;
+  border-right: 1px solid $brown;
 
   &:focus {
     color: $brown;
@@ -37,6 +47,8 @@
   padding-left: 24px;
   border-bottom: 1px solid $brown;
   position: relative;
+  border-left: 1px solid $brown;
+  border-right: 1px solid $brown;
 
   &::after {
     content: "";
@@ -59,8 +71,9 @@
     }
   }
 
-  &:last-child {
-    border: none;
+  &--range {
+    padding-right: 24px;
+    padding-top: 4px;
   }
 }
 
@@ -68,6 +81,18 @@
   display: flex;
   flex-direction: column;
   padding-bottom: 13px;
+}
+
+.catalog__filter-inputs-range {
+  font-family: $poppins;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 18px;
+  color: $black;
+  border: none;
+  padding-top: 12px;
+  padding-left: 13px;
+  outline: none;
 }
 
 .catalog__filter-section label {
@@ -79,6 +104,10 @@
   padding-left: 25px;
   position: relative;
   margin-bottom: 13px;
+}
+
+label.catalog__filter-inputs-range-label {
+  margin-bottom: 4px;
 }
 
 .catalog__filter-section input {
@@ -97,6 +126,38 @@
   top: 2px;
   border: 1px solid $brown;
   background-color: $white;
+}
+
+.catalog__filter-form button {
+  width: 250px;
+  height: 68px;
+  border: none;
+  font-family: $poppins;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 21px;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  &:active {
+    opacity: 0.4;
+  }
+}
+
+.catalog__filter-form button[type="submit"] {
+  background-color: $brown;
+  color: $white;
+  margin-top: 35px;
+}
+
+.catalog__filter-form button[type="button"] {
+  background-color: transparent;
+  border: 1px solid $brown;
+  color: $black;
+  margin-top: 25px;
 }
 
 .filter-hidden {
@@ -127,8 +188,7 @@
   color: $black;
   text-align: center;
   margin: 0;
-  padding-top: 17px;
-  padding-left: 8px;
+  padding-top: 18px;
   padding-bottom: 6px;
 }
 
@@ -209,5 +269,136 @@
 
   &--active {
     color: $black;
+  }
+}
+
+.ui-widget-content {
+  height: 1px;
+  box-sizing: border-box;
+}
+
+.ui-slider .ui-slider-handle {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: $brown;
+  top: -8px;
+  cursor: pointer;
+  outline: none;
+}
+
+.ui-slider .ui-slider-range {
+  border: 1px solid $brown;
+}
+
+.ui-widget.ui-widget-content {
+  border: 1px solid $cream;
+}
+
+@media (max-width: $tablet) {
+  .catalog__content-container {
+    flex-direction: column;
+    position: relative;
+    width: 678px;
+    margin: 0 auto;
+    margin-top: 30px;
+  }
+
+  .catalog__filter {
+    display: none;
+
+    &--visible {
+      display: block;
+      position: absolute;
+      top: 111px;
+      left: -45px;
+      z-index: 5;
+    }
+  }
+
+  .catalog__content-filter-trigger {
+    display: block;
+    width: 678px;
+    height: 68px;
+    background-color: $brown;
+    border: none;
+    font-family: $poppins;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 21px;
+    color: $white;
+    margin-top: 20px;
+  }
+
+  .catalog__filter-form {
+    width: 423px;
+    background-color: $white;
+    border-top: none;
+    position: relative;
+    padding-bottom: 40px;
+  }
+
+  .catalog__filter-form button {
+    width: 362px;
+    margin-left: 21px;
+  }
+
+  button.catalog__filter-close-btn {
+    display: block;
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    background-image: url("../img/filter-close.svg");
+    background-color: transparent;
+    top: -15px;
+    right: -15px;
+    background-repeat: no-repeat;
+  }
+
+  .catalog__filter-form h3 {
+    border-left: none;
+    border-right: none;
+  }
+
+  .catalog__filter-section {
+    border-left: none;
+    border-right: none;
+  }
+
+  .catalog__products-container {
+    margin-left: 0;
+    margin-top: 50px;
+  }
+
+  .catalog__product {
+    margin-bottom: 35px;
+    width: 206px;
+  }
+
+  .catalog__product-image {
+    width: 206px;
+    height: 208px;
+  }
+
+  .catalog__pagination {
+    justify-content: space-between;
+    margin-right: 0;
+    padding-right: 30px;
+    padding-left: 39px;
+  }
+
+  .catalog__pagination-btn--previous {
+    margin: 0;
+  }
+
+  .catalog__pagination-pages {
+    margin: 0;
+    margin-right: 16px;
+  }
+}
+
+@media (max-width: $mobile) {
+  .catalog__content-filter-trigger {
+    width: 290px;
   }
 }

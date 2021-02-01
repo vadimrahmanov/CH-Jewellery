@@ -1,6 +1,10 @@
 .footer {
   background-color: #000000;
   margin-top: 100px;
+
+  &--catalog {
+    margin-top: 72px;
+  }
 }
 
 .footer__container {
@@ -154,6 +158,10 @@ svg.footer__social-medias-fb-icon {
 @media (max-width: $tablet) {
   .footer {
     margin-top: 61px;
+
+    &--catalog {
+      margin-top: 74px;
+    }
   }
 
   .footer__container {
