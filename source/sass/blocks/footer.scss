@@ -5,6 +5,10 @@
   &--catalog {
     margin-top: 72px;
   }
+
+  &--product {
+    margin-top: 132px;
+  }
 }
 
 .footer__container {
@@ -162,6 +166,10 @@ svg.footer__social-medias-fb-icon {
     &--catalog {
       margin-top: 74px;
     }
+
+    &--product {
+      margin-top: 70px;
+    }
   }
 
   .footer__container {
@@ -210,6 +218,14 @@ svg.footer__social-medias-fb-icon {
 @media (max-width: $mobile) {
   .footer {
     margin-top: 55px;
+
+    &--catalog {
+      margin-top: 64px;
+    }
+
+    &--product {
+      margin-top: 63px;
+    }
   }
 
   .footer__container {

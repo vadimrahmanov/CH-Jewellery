@@ -53,6 +53,10 @@
   display: flex;
   justify-content: center;
   margin-top: 23px;
+
+  &--product {
+    margin-top: 23px;
+  }
 }
 
 .new-in__shop-now a {
@@ -122,6 +126,10 @@
   margin: 0;
   text-align: center;
   padding-top: 17px;
+}
+
+.new-in__slide--product h3 {
+  padding-top: 23px;
 }
 
 .new-in__slide p {
@@ -206,6 +214,10 @@
     &:nth-child(2n+2) {
       margin-right: 0;
     }
+  }
+
+  .new-in__slide--product h3 {
+    padding-top: 19px;
   }
 
   .owl-item .new-in__slide {
