@@ -1,0 +1,247 @@
+.modal-login {
+  background-color: rgba($black, 0.25);
+  z-index: 15;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: auto;
+  display: none;
+
+  &--visible {
+    display: block;
+  }
+}
+
+.modal-login__window {
+  background-color: $cream;
+  width: 430px;
+  top: 100px;
+  left: 50%;
+  transform: translate(-50%, 0);
+  z-index: 5;
+  min-height: 586px;
+  box-sizing: border-box;
+  box-shadow: 0 5px 32px rgba(226, 221, 215, 0.24);
+  position: relative;
+  outline: none;
+  background-image: url("../img/sweet-ice-cream-photography-ootMB9iANOc-unsplash.png");
+  background-size: 430px 138px;
+  background-repeat: no-repeat;
+
+  &--nojs {
+    position: static;
+    top: 0;
+    left: 0;
+    transform: translate(0);
+    margin: 0 auto;
+    margin-top: 80px;
+    width: 1024px;
+    background-size: 1024px 138px;
+  }
+
+  @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+    background-image: url("../img/sweet-ice-cream-photography-ootMB9iANOc-unsplash@2x.png");
+  }
+}
+
+.modal-login__close {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  width: 14px;
+  height: 14px;
+  background-image: url("../img/close-icon.svg");
+  background-repeat: no-repeat;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+
+  &--nojs {
+    display: none;
+  }
+}
+
+.modal-login__window h2 {
+  font-family: $cormorant;
+  font-size: 34px;
+  font-weight: 700;
+  line-height: 44px;
+  color: $black;
+  text-align: center;
+  margin: 0;
+  padding-top: 188px;
+}
+
+.modal-login-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: 45px;
+  margin-right: 45px;
+  margin-top: 33px;
+}
+
+.modal-login-form label {
+  width: 100%;
+
+  &:first-child {
+    margin-bottom: 35px;
+  }
+}
+
+.modal-login-form input {
+  font-family: $poppins;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 21px;
+  color: $gray;
+  width: 100%;
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid $black;
+  padding: 0;
+  padding-bottom: 8px;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.modal-login-form a {
+  font-family: $poppins;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 18px;
+  color: $gray;
+  padding-top: 5px;
+  display: flex;
+  margin-left: auto;
+
+  &:hover {
+    opacity: 0.7;
+  }
+
+  &:active {
+    opacity: 0.4;
+  }
+
+  &:last-child {
+    font-size: 14px;
+    line-height: 21px;
+    color: $black;
+    margin-left: 0;
+    display: inline;
+    padding-left: 4px;
+  }
+}
+
+.modal-login-form button {
+  font-family: $poppins;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 21px;
+  color: $white;
+  width: 340px;
+  height: 68px;
+  background-color: $brown;
+  border: none;
+  margin-top: 45px;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.7;
+  }
+
+  &:active {
+    opacity: 0.4;
+  }
+}
+
+.modal-login-form p {
+  font-family: $poppins;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 21px;
+  color: $gray;
+  margin: 0;
+  padding-top: 15px;
+  width: 233px;
+}
+
+@media (max-width: $tablet) {
+  .modal-login__window {
+    top: 80px;
+    width: 442px;
+    background-size: 442px 138px;
+
+    &--nojs {
+      background-size: 768px 138px;
+      width: 768px;
+    }
+  }
+
+  .modal-login__close {
+    background-size: 29px 29px;
+    right: 19px;
+    top: 20px;
+    width: 21px;
+    height: 21px;
+  }
+
+  .modal-login-form {
+    margin-left: 51px;
+    margin-right: 51px;
+  }
+
+  .modal-login-form p {
+    width: 226px;
+  }
+
+  .modal-login-form a {
+    &:last-child {
+      padding-left: 1px;
+    }
+  }
+}
+
+@media (max-width: $mobile) {
+  .modal-login__window {
+    top: 50px;
+    width: 270px;
+    min-height: 470px;
+    background-size: 270px 84px;
+  }
+
+  .modal-login__window h2 {
+    font-size: 24px;
+    line-height: 31px;
+    padding-top: 121px;
+  }
+
+  .modal-login__close {
+    right: 15px;
+    top: 15px;
+    width: 14px;
+    height: 14px;
+    background-size: initial;
+  }
+
+  .modal-login-form {
+    margin-left: 15px;
+    margin-right: 15px;
+    margin-top: 27px;
+  }
+
+  .modal-login-form label {
+    &:first-child {
+      margin-bottom: 30px;
+    }
+  }
+
+  .modal-login-form button {
+    width: 240px;
+    margin-top: 35px;
+  }
+}

@@ -41,6 +41,10 @@
     color: $brown;
     outline: none;
   }
+
+  &:hover {
+    opacity: 0.5;
+  }
 }
 
 .catalog__filter-section {

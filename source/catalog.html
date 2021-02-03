@@ -34,7 +34,7 @@
           </svg>
         </a>
         <div class="header__tools">
-          <a href="">Login</a>
+          <a href="login.html" tabindex="0">Login</a>
           <a href="">Cart 0
             <svg class="header__tools-cart-image" width="20" height="20">
               <use xlink:href="img/sprite_auto.svg#cart-icon"></use>
@@ -152,8 +152,7 @@
                 <div class="catalog__filter-inputs filter-visible">
                   <div id="slider-range"></div>
                   <label class="catalog__filter-inputs-range-label" for="amount">
-                    <input class="catalog__filter-inputs-range" type="text" id="amount" name="products" value="price"
-                      readonly>
+                    <input class="catalog__filter-inputs-range" type="text" id="amount" name="products" readonly>
                   </label>
                 </div>
               </div>
@@ -164,7 +163,7 @@
           <div class="catalog__products-container">
             <div class="catalog__product">
               <article>
-                <a href="">
+                <a href="product.html">
                   <picture>
                     <source type="image/webp" srcset="img/double-pearl-earrings.webp 1x">
                     <img class="catalog__product-image" src="img/double-pearl-earrings.png" width="270" height="272"
@@ -178,7 +177,7 @@
             </div>
             <div class="catalog__product">
               <article>
-                <a href="">
+                <a href="product.html">
                   <picture>
                     <source type="image/webp" srcset="img/black-choker-gold-bead.webp 1x">
                     <img class="catalog__product-image" src="img/black-choker-gold-bead.png" width="270" height="272"
@@ -192,7 +191,7 @@
             </div>
             <div class="catalog__product">
               <article>
-                <a href="">
+                <a href="product.html">
                   <picture>
                     <source type="image/webp" srcset="img/gold-layered-necklace.webp 1x">
                     <img class="catalog__product-image" src="img/gold-layered-necklace.png" width="270" height="272"
@@ -206,7 +205,7 @@
             </div>
             <div class="catalog__product">
               <article>
-                <a href="">
+                <a href="product.html">
                   <picture>
                     <source type="image/webp" srcset="img/blue-gemstone-pendant.webp 1x">
                     <img class="catalog__product-image" src="img/blue-gemstone-pendant.png" width="270" height="272"
@@ -220,7 +219,7 @@
             </div>
             <div class="catalog__product">
               <article>
-                <a href="">
+                <a href="product.html">
                   <picture>
                     <source type="image/webp" srcset="img/boho-earrings.webp 1x">
                     <img class="catalog__product-image" src="img/boho-earrings.png" width="270" height="272"
@@ -234,7 +233,7 @@
             </div>
             <div class="catalog__product">
               <article>
-                <a href="">
+                <a href="product.html">
                   <picture>
                     <source type="image/webp" srcset="img/bird-necklace.webp 1x">
                     <img class="catalog__product-image" src="img/bird-necklace.png" width="270" height="272"
@@ -248,7 +247,7 @@
             </div>
             <div class="catalog__product">
               <article>
-                <a href="">
+                <a href="product.html">
                   <picture>
                     <source type="image/webp" srcset="img/black-leather-choker-necklace.webp 1x">
                     <img class="catalog__product-image" src="img/black-leather-choker-necklace.png" width="270"
@@ -262,7 +261,7 @@
             </div>
             <div class="catalog__product">
               <article>
-                <a href="">
+                <a href="product.html">
                   <picture>
                     <source type="image/webp" srcset="img/purple-gemstone-necklace-catalog.webp 1x">
                     <img class="catalog__product-image" src="img/purple-gemstone-necklace-catalog.png" width="270"
@@ -276,7 +275,7 @@
             </div>
             <div class="catalog__product">
               <article>
-                <a href="">
+                <a href="product.html">
                   <picture>
                     <source type="image/webp" srcset="img/elephant-earrings.webp 1x">
                     <img class="catalog__product-image" src="img/elephant-earrings.png" width="270" height="272"
@@ -290,7 +289,7 @@
             </div>
             <div class="catalog__product">
               <article>
-                <a href="">
+                <a href="product.html">
                   <picture>
                     <source type="image/webp" srcset="img/threader-necklace-closeup.webp 1x">
                     <img class="catalog__product-image" src="img/threader-necklace-closeup.png" width="270" height="272"
@@ -304,7 +303,7 @@
             </div>
             <div class="catalog__product">
               <article>
-                <a href="">
+                <a href="product.html">
                   <picture>
                     <source type="image/webp" srcset="img/origami-crane-necklace.webp 1x">
                     <img class="catalog__product-image" src="img/origami-crane-necklace.png" width="270" height="272"
@@ -318,7 +317,7 @@
             </div>
             <div class="catalog__product">
               <article>
-                <a href="">
+                <a href="product.html">
                   <picture>
                     <source type="image/webp" srcset="img/marble-earrings.webp 1x">
                     <img class="catalog__product-image" src="img/marble-earrings.png" width="270" height="272"
@@ -427,6 +426,30 @@
       </div>
     </div>
   </footer>
+  <section class="modal-login">
+    <div class="modal-login__window" tabindex="0">
+      <button class="modal-login__close" tabindex="0">
+        <span class="visually-hidden">Close window</span>
+      </button>
+      <h2>Log In</h2>
+      <form class="modal-login-form">
+        <label>
+          <span class="visually-hidden">Your E-mail</span>
+          <input type="email" name="email" placeholder="Your E-mail" required>
+        </label>
+        <label>
+          <span class="visually-hidden">Your E-mail</span>
+          <input type="password" name="password" placeholder="Password" required>
+        </label>
+        <a href="">Forgot your password?</a>
+        <button type="submit">Log In</button>
+        <p>
+          Don’t have an account?
+          <a href="">Sign up</a>
+        </p>
+      </form>
+    </div>
+  </section>
   <script src="js/vendors.js"></script>
   <script src="js/main.js"></script>
 </body>

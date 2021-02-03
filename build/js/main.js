@@ -21,6 +21,26 @@
   var filterElementTrigger = document.querySelectorAll('.catalog__filter-form h3');
   var filterSection = document.querySelectorAll('.catalog__filter-section');
   var filterInputs = document.querySelectorAll('.catalog__filter-inputs');
+  var addToCartBtn = document.querySelector('.product__description-add-to-card');
+  var addCartModal = document.querySelector('.product__add-cart-modal');
+  var addCartModalWindow = document.querySelector('.product__add-cart-modal-window');
+  var addCartCloseBtn = document.querySelector('.product__add-cart-modal-window-close');
+  var loginBtn = document.querySelector('.header__tools a');
+  var loginModal = document.querySelector('.modal-login');
+  var loginCloseBtn = document.querySelector('.modal-login__close');
+  var htmlBody = document.querySelector('body');
+  var loginBtnMobile = document.querySelector('.header__add-nav-login a');
+  var loginSubmitBtn = document.querySelector('.modal-login-form button');
+  var emailInput = document.querySelector('input[name="email"');
+  var isStorageSupport = true;
+  var storageEmail = '';
+
+  try {
+    storageEmail = localStorage.getItem('email');
+  } catch (err) {
+    isStorageSupport = false;
+  }
+
   navBtn.classList.add('header__nav-btn--close-nav');
   userTools.classList.add('header__user-tools--close-nav');
   search.classList.add('header__search--close-nav');
@@ -46,6 +66,135 @@
     };
   };
 
+  var addCartOnLoad = function addCartOnLoad(element) {
+    if (!element) {
+      return;
+    }
+
+    element.removeAttribute('href');
+  };
+
+  var loginOnLoad = function loginOnLoad(element) {
+    if (!element) {
+      return;
+    }
+
+    element.removeAttribute('href');
+  };
+
+  var setListener = function setListener(element, type, handler) {
+    if (!element) {
+      return;
+    }
+
+    element.addEventListener(type, handler); // eslint-disable-next-line consistent-return
+
+    return function () {
+      element.removeEventListener(type, handler);
+    };
+  };
+
+  loginOnLoad(loginBtn);
+  loginOnLoad(loginBtnMobile);
+  addCartOnLoad(addToCartBtn);
+  setListener(loginBtn, 'click', function () {
+    loginModal.classList.add('modal-login--visible');
+
+    if (storageEmail) {
+      emailInput.value = storageEmail;
+    } else {
+      emailInput.focus();
+    }
+  });
+  setListener(loginBtnMobile, 'click', function () {
+    loginModal.classList.add('modal-login--visible');
+    navBtnImg.classList.toggle('header__nav-btn-img--nav-opened');
+    userTools.classList.toggle('header__user-tools--nav-opened');
+    logoImg.classList.toggle('header__logo-image--nav-opened');
+    searchInput.style.border = 'none';
+    searchInput.style.color = '#ffffff';
+    searchInputIcon.classList.toggle('header__search-icon--nav-opened');
+
+    for (var i = 0; i < navLinks.length; i++) {
+      navLinks[i].style.color = '#ffffff';
+    }
+
+    for (var j = 0; j < addNav.length; j++) {
+      addNav[j].style.color = 'rgba(255, 255, 255, 0.75)';
+    }
+
+    addNavLogin.style.color = '#ffffff';
+    search.classList.toggle('header__search--nav-opened');
+    navigation.classList.toggle('header__navigation--nav-opened');
+    cartImg.classList.toggle('header__tools-cart-image--nav-opened');
+    htmlBody.classList.add('nav-open');
+
+    if (storageEmail) {
+      emailInput.value = storageEmail;
+    } else {
+      emailInput.focus();
+    }
+  });
+  setListener(loginBtn, 'keydown', function (evt) {
+    if (evt.key === 'Enter') {
+      loginModal.classList.add('modal-login--visible');
+
+      if (storageEmail) {
+        emailInput.value = storageEmail;
+      } else {
+        emailInput.focus();
+      }
+    }
+  });
+  setListener(loginSubmitBtn, 'click', function (evt) {
+    evt.preventDefault();
+
+    if (isStorageSupport) {
+      localStorage.setItem('email', emailInput.value);
+    }
+
+    loginModal.classList.remove('modal-login--visible');
+    htmlBody.classList.remove('nav-open');
+  });
+  setListener(document, 'click', function (evt) {
+    if (evt.target === loginModal) {
+      loginModal.classList.remove('modal-login--visible');
+      htmlBody.classList.remove('nav-open');
+    }
+  });
+  setListener(document, 'keydown', function (evt) {
+    if (evt.key === 'Escape') {
+      loginModal.classList.remove('modal-login--visible');
+      htmlBody.classList.remove('nav-open');
+    }
+  });
+  setListener(loginCloseBtn, 'click', function () {
+    loginModal.classList.remove('modal-login--visible');
+    htmlBody.classList.remove('nav-open');
+  });
+  setListener(addToCartBtn, 'click', function () {
+    addCartModal.classList.add('product__add-cart-modal--visible');
+    addCartModalWindow.focus();
+  });
+  setListener(addToCartBtn, 'keydown', function (evt) {
+    if (evt.key === 'Enter') {
+      addCartModal.classList.add('product__add-cart-modal--visible');
+      addCartModalWindow.focus();
+    }
+  });
+  setListener(addCartCloseBtn, 'click', function () {
+    addCartModal.classList.remove('product__add-cart-modal--visible');
+  });
+  setListener(document, 'click', function (evt) {
+    if (evt.target === addCartModal) {
+      addCartModal.classList.remove('product__add-cart-modal--visible');
+    }
+  });
+  setListener(document, 'keydown', function (evt) {
+    if (addCartModal && evt.key === 'Escape') {
+      addCartModal.classList.remove('product__add-cart-modal--visible');
+    }
+  });
   navBtn.addEventListener('click', function () {
     navBtnImg.classList.toggle('header__nav-btn-img--nav-opened');
     userTools.classList.toggle('header__user-tools--nav-opened');
@@ -66,6 +215,7 @@
     search.classList.toggle('header__search--nav-opened');
     navigation.classList.toggle('header__navigation--nav-opened');
     cartImg.classList.toggle('header__tools-cart-image--nav-opened');
+    htmlBody.classList.toggle('nav-open');
   });
 
   for (var i = 0; i < faqItem.length; i++) {
@@ -154,7 +304,7 @@
     slideTransition: '',
     loadedClass: 'new-in__slider--loaded',
     info: true,
-    dots: true,
+    dots: false,
     navContainerClass: 'new-in__pagination',
     navClass: ['new-in__pagination-previous', 'new-in__pagination-next'],
     dotsClass: 'new-in__slider-page-nav',

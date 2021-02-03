@@ -85,8 +85,8 @@
   width: 88.3%;
   flex-wrap: wrap;
   position: relative;
-  padding-bottom: 67px;
-  margin-bottom: 45px;
+  padding-bottom: 51px;
+  margin-bottom: 0;
 
   &--loaded {
     width: 88%;
@@ -125,7 +125,7 @@
   color: $black;
   margin: 0;
   text-align: center;
-  padding-top: 17px;
+  padding-top: 24px;
 }
 
 .new-in__slide--product h3 {
@@ -154,6 +154,34 @@
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
+}
+
+.new-in__slider-pages {
+  display: flex;
+  justify-content: center;
+}
+
+.new-in__slider-pages-btn {
+  font-family: $poppins;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 21px;
+  border: none;
+  color: $gray;
+  background-color: transparent;
+  outline: none;
+
+  &--active {
+    color: $black;
+  }
+
+  &--hidden {
+    display: none;
+  }
+}
+
+.new-in__slider-page-mobile {
+  display: none;
 }
 
 @media (max-width: $tablet) {
@@ -200,6 +228,7 @@
   .new-in__slider {
     margin-left: 5.8%;
     margin-right: 0;
+    padding-bottom: 43px;
 
     &--loaded {
       width: 92%;
@@ -216,12 +245,22 @@
     }
   }
 
+  .new-in__slide h3 {
+    padding-top: 18px;
+  }
+
   .new-in__slide--product h3 {
     padding-top: 19px;
   }
 
   .owl-item .new-in__slide {
     width: 100%;
+  }
+
+  .new-in__slider-pages-btn {
+    &--hidden {
+      display: block;
+    }
   }
 }
 
@@ -235,7 +274,7 @@
   }
 
   .new-in__slider {
-    padding-bottom: 55px;
+    padding-bottom: 1px;
 
     &--loaded {
       margin-left: 4.5%;
@@ -244,5 +283,36 @@
 
   .new-in__slide {
     margin-top: 19px;
+  }
+
+  .new-in__slider-pages {
+    display: none;
+  }
+
+  .new-in__slider-page-mobile {
+    display: flex;
+    font-family: $poppins;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 21px;
+    color: $black;
+    justify-content: center;
+    margin-top: 32px;
+  }
+
+  .new-in__slider-page-mobile button {
+    border: none;
+    background-color: transparent;
+    font-family: $poppins;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 21px;
+    color: $black;
+  }
+
+  .new-in__slider-page-mobile p {
+    margin: 0;
+    margin-left: 4px;
+    margin-right: 3px;
   }
 }

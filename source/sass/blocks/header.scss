@@ -89,6 +89,7 @@
   font-weight: 500;
   line-height: 21px;
   color: $black;
+  cursor: pointer;
 
   &:hover {
     opacity: 0.6;
@@ -315,6 +316,7 @@
     font-size: 18px;
     line-height: 23px;
     color: $black;
+    cursor: pointer;
   }
 
   .header__add-nav-login {
