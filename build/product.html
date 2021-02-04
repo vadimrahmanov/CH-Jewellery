@@ -10,6 +10,15 @@
   <title>Jewellery | Main</title>
   <link rel="icon" href="img/favicon.ico">
   <link rel="stylesheet" href="css/style.min.css">
+  <link rel="preload" href="fonts/cormorant-garamond.woff2" crossorigin="anonymous" as="font">
+  <link rel="preload" href="fonts/cormorant-garamond-italic.woff2" crossorigin="anonymous" as="font">
+  <link rel="preload" href="fonts/cormorant-garamond-medium.woff2" crossorigin="anonymous" as="font">
+  <link rel="preload" href="fonts/cormorant-garamond-medium-italic.woff2" crossorigin="anonymous" as="font">
+  <link rel="preload" href="fonts/cormorant-garamond-semi-bold.woff2" crossorigin="anonymous" as="font">
+  <link rel="preload" href="fonts/cormorant-garamond-bold.woff2" crossorigin="anonymous" as="font">
+  <link rel="preload" href="fonts/poppins.woff2" crossorigin="anonymous" as="font">
+  <link rel="preload" href="fonts/poppins-medium.woff2" crossorigin="anonymous" as="font">
+  <link rel="preload" href="fonts/poppins-bold.woff2" crossorigin="anonymous" as="font">
 </head>
 
 <body>
@@ -17,26 +26,27 @@
     <div class="header__container">
       <div class="header__user-tools">
         <button class="header__nav-btn" type="button">
-          <svg class="header__nav-btn-img" width="28" height="18">
+          <svg class="header__nav-btn-img" width="28" height="18" aria-label="Open/Close navigation image">
             <use xlink:href="img/sprite_auto.svg#nav-open"></use>
           </svg>
           <span class="visually-hidden">Open and close menu</span>
         </button>
         <form class="header__search" method="GET" action="http://echo.htmlacademy.ru">
-          <svg class="header__search-icon" width="16" height="16">
+          <svg class="header__search-icon" width="16" height="16" aria-label="search bar image">
             <use xlink:href="img/sprite_auto.svg#search-icon"></use>
           </svg>
-          <input type="text" name="search-for" placeholder="Type here to search">
+          <label class="visually-hidden" for="search-bar">Search</label>
+          <input id="search-bar" type="text" name="search-for" placeholder="Type here to search">
         </form>
         <a class="header__logo" href="index.html">
-          <svg class="header__logo-image" width="66" height="66">
+          <svg class="header__logo-image" width="66" height="66" aria-label="Logo image">
             <use xlink:href="img/sprite_auto.svg#logo"></use>
           </svg>
         </a>
         <div class="header__tools">
           <a href="login.html" tabindex="0">Login</a>
           <a href="">Cart 0
-            <svg class="header__tools-cart-image" width="20" height="20">
+            <svg class="header__tools-cart-image" width="20" height="20" aria-label="Cart image">
               <use xlink:href="img/sprite_auto.svg#cart-icon"></use>
             </svg>
           </a>
@@ -45,7 +55,7 @@
       <nav class="header__navigation">
         <ul>
           <li>
-            <a href="">What’s new</a>
+            <a href="index.html">What’s new</a>
           </li>
           <li>
             <a href="">Chokers</a>
@@ -71,13 +81,14 @@
             <a href="">Contact Us</a>
           </li>
           <li class="header__add-nav-login">
-            <a href="">Login</a>
+            <a href="login.html">Login</a>
           </li>
         </ul>
       </nav>
     </div>
   </header>
   <main>
+    <h1 class="visually-hidden">Information about product</h1>
     <section class="product">
       <h2 class="visually-hidden">Product details</h2>
       <div class="product__container">
@@ -85,16 +96,19 @@
           <div class="product__images-container">
             <div class="product__images-preview">
               <picture>
+                <source type="image/avif" srcset="img/gold-necklace-for-women.avif">
                 <source type="image/webp" srcset="img/gold-necklace-for-women.webp 1x">
                 <img src="img/gold-necklace-for-women.png" width="100" height="125" alt="Gold Necklace">
                 <!--Size: 100x125 / Retina Size: 200x250-->
               </picture>
               <picture>
+                <source type="image/avif" srcset="img/pretty-gold-necklace.avif">
                 <source type="image/webp" srcset="img/pretty-gold-necklace.webp 1x">
                 <img src="img/pretty-gold-necklace.png" width="100" height="125" alt="Gold Necklace">
                 <!--Size: 100x125 / Retina Size: 200x250-->
               </picture>
               <picture>
+                <source type="image/avif" srcset="img/womens-necklace-set.avif">
                 <source type="image/webp" srcset="img/womens-necklace-set.webp 1x">
                 <img src="img/womens-necklace-set.png" width="100" height="125" alt="Gold Necklace">
                 <!--Size: 100x125 / Retina Size: 200x250-->
@@ -137,7 +151,7 @@
             </div>
           </div>
         </div>
-        <div class="product__slider">
+        <div class="new-in new-in--product">
           <h4>You May Also Like</h4>
           <div class="new-in__shop-now new-in__shop-now--product">
             <a href="catalog.html">Shop Now</a>
@@ -148,6 +162,7 @@
                 <a href="product.html">
                   <picture>
                     <source type="image/webp" srcset="img/purple-gemstone-necklace.webp 1x">
+                    <source type="image/avif" srcset="img/purple-gemstone-necklace.avif">
                     <img class="new-in__product-image" src="img/purple-gemstone-necklace.png" width="270" height="284" alt="Necklace with amethyst picture">
                     <!--Size: 270x284 / Retina Size: 540x568-->
                   </picture>
@@ -160,6 +175,7 @@
               <article>
                 <a href="product.html">
                   <picture>
+                    <source type="image/avif" srcset="img/layered-choker-necklace.avif">
                     <source type="image/webp" srcset="img/layered-choker-necklace.webp 1x">
                     <img class="new-in__product-image" src="img/layered-choker-necklace.png" width="270" height="284" alt="Layered сhoker picture">
                     <!--Size: 270x284 / Retina Size: 540x568-->
@@ -173,6 +189,7 @@
               <article>
                 <a href="product.html">
                   <picture>
+                    <source type="image/avif" srcset="img/dainty-gold-necklace.avif">
                     <source type="image/webp" srcset="img/dainty-gold-necklace.webp 1x">
                     <img class="new-in__product-image" src="img/dainty-gold-necklace.png" width="270" height="284" alt="Gold chain picture">
                     <!--Size: 270x284 / Retina Size: 540x568-->
@@ -186,6 +203,7 @@
               <article>
                 <a href="product.html">
                   <picture>
+                    <source type="image/avif" srcset="img/galaxy-earrings.avif">
                     <source type="image/webp" srcset="img/galaxy-earrings.webp 1x">
                     <img class="new-in__product-image" src="img/galaxy-earrings.png" width="270" height="284" alt="Galaxy earrings picture">
                     <!--Size: 270x284 / Retina Size: 540x568-->
@@ -199,6 +217,7 @@
               <article>
                 <a href="product.html">
                   <picture>
+                    <source type="image/avif" srcset="img/double-pearl-earrings.avif">
                     <source type="image/webp" srcset="img/double-pearl-earrings.webp 1x">
                     <img class="new-in__product-image" src="img/double-pearl-earrings.png" width="270" height="284" alt="Double pearl earrings picture">
                     <!--Size: 270x284 / Retina Size: 540x568-->
@@ -212,6 +231,7 @@
               <article>
                 <a href="product.html">
                   <picture>
+                    <source type="image/avif" srcset="img/black-choker-gold-bead.avif">
                     <source type="image/webp" srcset="img/black-choker-gold-bead.webp 1x">
                     <img class="new-in__product-image" src="img/black-choker-gold-bead.png" width="270" height="284" alt="Choker with gold bead picture">
                     <!--Size: 270x284 / Retina Size: 540x568-->
@@ -225,6 +245,7 @@
               <article>
                 <a href="product.html">
                   <picture>
+                    <source type="image/avif" srcset="img/gold-layered-necklace.avif">
                     <source type="image/webp" srcset="img/gold-layered-necklace.webp 1x">
                     <img class="new-in__product-image" src="img/gold-layered-necklace.png" width="270" height="284" alt="Gold layered necklace picture">
                     <!--Size: 270x284 / Retina Size: 540x568-->
@@ -238,6 +259,7 @@
               <article>
                 <a href="product.html">
                   <picture>
+                    <source type="image/avif" srcset="img/blue-gemstone-pendant.avif">
                     <source type="image/webp" srcset="img/blue-gemstone-pendant.webp 1x">
                     <img class="new-in__product-image" src="img/blue-gemstone-pendant.png" width="270" height="284" alt="Blue gemstone pendant picture">
                     <!--Size: 270x284 / Retina Size: 540x568-->
@@ -251,6 +273,7 @@
               <article>
                 <a href="product.html">
                   <picture>
+                    <source type="image/avif" srcset="img/boho-earrings.avif">
                     <source type="image/webp" srcset="img/boho-earrings.webp 1x">
                     <img class="new-in__product-image" src="img/boho-earrings.png" width="270" height="284" alt="Boho earrings picture">
                     <!--Size: 270x284 / Retina Size: 540x568-->
@@ -264,6 +287,7 @@
               <article>
                 <a href="product.html">
                   <picture>
+                    <source type="image/avif" srcset="img/bird-necklace.avif">
                     <source type="image/webp" srcset="img/bird-necklace.webp 1x">
                     <img class="new-in__product-image" src="img/bird-necklace.png" width="270" height="284" alt="Gold bird necklace picture">
                     <!--Size: 270x284 / Retina Size: 540x568-->
@@ -277,6 +301,7 @@
               <article>
                 <a href="product.html">
                   <picture>
+                    <source type="image/avif" srcset="img/black-leather-choker-necklace.avif">
                     <source type="image/webp" srcset="img/black-leather-choker-necklace.webp 1x">
                     <img class="new-in__product-image" src="img/black-leather-choker-necklace.png" width="270" height="284" alt="Black leather choker picture">
                     <!--Size: 270x284 / Retina Size: 540x568-->
@@ -290,6 +315,7 @@
               <article>
                 <a href="product.html">
                   <picture>
+                    <source type="image/avif" srcset="img/elephant-earrings.avif">
                     <source type="image/webp" srcset="img/elephant-earrings.webp 1x">
                     <img class="new-in__product-image" src="img/elephant-earrings.png" width="270" height="284" alt="Elephant earrings picture">
                     <!--Size: 270x284 / Retina Size: 540x568-->
@@ -303,6 +329,7 @@
               <article>
                 <a href="product.html">
                   <picture>
+                    <source type="image/avif" srcset="img/threader-necklace-closeup.avif">
                     <source type="image/webp" srcset="img/threader-necklace-closeup.webp 1x">
                     <img class="new-in__product-image" src="img/threader-necklace-closeup.png" width="270" height="284" alt="Threader necklace picture">
                     <!--Size: 270x284 / Retina Size: 540x568-->
@@ -316,6 +343,7 @@
               <article>
                 <a href="product.html">
                   <picture>
+                    <source type="image/avif" srcset="img/origami-crane-necklace.avif">
                     <source type="image/webp" srcset="img/origami-crane-necklace.webp 1x">
                     <img class="new-in__product-image" src="img/origami-crane-necklace.png" width="270" height="284" alt="Origami crane necklace picture">
                     <!--Size: 270x284 / Retina Size: 540x568-->
@@ -329,6 +357,7 @@
               <article>
                 <a href="product.html">
                   <picture>
+                    <source type="image/avif" srcset="img/marble-earrings.avif">
                     <source type="image/webp" srcset="img/marble-earrings.webp 1x">
                     <img class="new-in__product-image" src="img/marble-earrings.png" width="270" height="284" alt="Marble earrings">
                     <!--Size: 270x284 / Retina Size: 540x568-->
@@ -362,10 +391,11 @@
         <h2>The good stuff in your inbox</h2>
         <h3>News and updates from CH. No spam, we promise.</h3>
         <form method="POST" action="http://echo.htmlacademy.ru">
-          <input type="email" name="added-to-subscription-list" placeholder="Your E-mail">
+          <label class="visually-hidden" for="subscription-email">Email</label>
+          <input id="subscription-email" type="email" name="added-to-subscription-list" placeholder="Your E-mail">
           <button type="submit">
             Sign Up
-            <svg width="29" height="9">
+            <svg width="29" height="9" aria-label="Subscribe image">
               <use xlink:href="img/sprite_auto.svg#arrow-right-icon"></use>
             </svg>
           </button>
@@ -403,7 +433,7 @@
         <ul class="footer__social-medias">
           <li>
             <a href="">
-              <svg class="footer__social-medias-fb-icon" width="8" height="15">
+              <svg class="footer__social-medias-fb-icon" width="8" height="15" aria-label="Facebook logo">
                 <use xlink:href="img/sprite_auto.svg#fb-icon"></use>
               </svg>
               Facebook
@@ -411,7 +441,7 @@
           </li>
           <li>
             <a href="">
-              <svg width="15" height="15">
+              <svg width="15" height="15" aria-label="Instagram logo">
                 <use xlink:href="img/sprite_auto.svg#instagram-icon"></use>
               </svg>
               Instagram
@@ -419,7 +449,7 @@
           </li>
           <li>
             <a href="">
-              <svg width="15" height="15">
+              <svg width="15" height="15" aria-label="Pinterest logo">
                 <use xlink:href="img/sprite_auto.svg#pinterest-icon"></use>
               </svg>
               Pinterest
@@ -427,7 +457,7 @@
           </li>
           <li>
             <a href="">
-              <svg width="15" height="13">
+              <svg width="15" height="13" aria-label="Twitter logo">
                 <use xlink:href="img/sprite_auto.svg#twitter-icon"></use>
               </svg>
               Twitter
@@ -437,23 +467,24 @@
       </div>
     </div>
   </footer>
-  <section class="product__add-cart-modal">
-    <div class="product__add-cart-modal-window" tabindex="0">
-      <button class="product__add-cart-modal-window-close" tabindex="0">
+  <section class="product-add-cart-modal">
+    <h2 class="visually-hidden">Here you cand add product to cart</h2>
+    <div class="product-add-cart-modal__window" tabindex="0">
+      <button class="product-add-cart-modal__window-close" tabindex="0">
         <span class="visually-hidden">Close window</span>
       </button>
       <h2>The item was added to your cart</h2>
-      <div class="product__add-cart-modal-item">
+      <div class="product-add-cart-modal__item">
         <picture>
           <source type="image/webp" srcset="img/necklace-detail-modal.webp 1x">
           <img src="img/necklace-detail-modal.png" width="84" height="79" alt="Gold Necklace">
           <!--Size: 84x79 / Retina Size: 168x158-->
         </picture>
-        <div class="product__add-cart-modal-item-description">
+        <div class="product-add-cart-modal__item-description">
           <h3>Gold Necklace</h3>
           <p>$ 115</p>
         </div>
-        <div class="product__add-cart-modal-item-quantity">
+        <div class="product-add-cart-modal__item-quantity">
           <button type="button">
             <span class="visually-hidden">Add one more item</span>
           </button>
@@ -463,12 +494,12 @@
           </button>
         </div>
       </div>
-      <div class="product__add-cart-modal-summary">
-        <div class="product__add-cart-modal-summary-info">
+      <div class="product-add-cart-modal__summary">
+        <div class="product-add-cart-modal__summary-info">
           <p>You have 1 item in the cart</p>
           <p>Cart subtotal: $ 115</p>
         </div>
-        <div class="product__add-cart-modal-summary-actions">
+        <div class="product-add-cart-modal__summary-actions">
           <a href="catalog.html">Continue shopping</a>
           <a href="">Checkout</a>
         </div>

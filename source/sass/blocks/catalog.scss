@@ -318,6 +318,16 @@ label.catalog__filter-inputs-range-label {
       left: -45px;
       z-index: 5;
     }
+
+    &--nojs {
+      display: block;
+      position: static;
+      margin: 0 auto;
+      margin-top: 40px;
+      top: 0;
+      left: 0;
+      z-index: 5;
+    }
   }
 
   .catalog__content-filter-trigger {
@@ -357,6 +367,10 @@ label.catalog__filter-inputs-range-label {
     top: -15px;
     right: -15px;
     background-repeat: no-repeat;
+
+    &--nojs {
+      display: none;
+    }
   }
 
   .catalog__filter-form h3 {
@@ -367,6 +381,10 @@ label.catalog__filter-inputs-range-label {
   .catalog__filter-section {
     border-left: none;
     border-right: none;
+  }
+
+  .catalog__filter-inputs-range {
+    padding-left: 103px;
   }
 
   .catalog__products-container {
@@ -427,6 +445,10 @@ label.catalog__filter-inputs-range-label {
 
   .catalog__content-filter-trigger {
     width: 290px;
+  }
+
+  .catalog__filter-inputs-range {
+    padding-left: 34px;
   }
 
   .catalog__pagination-btn {

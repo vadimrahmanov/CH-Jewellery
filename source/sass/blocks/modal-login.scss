@@ -12,6 +12,14 @@
   &--visible {
     display: block;
   }
+
+  &--nojs {
+    background-color: initial;
+    height: initial;
+    width: initial;
+    position: static;
+    display: block;
+  }
 }
 
 .modal-login__window {

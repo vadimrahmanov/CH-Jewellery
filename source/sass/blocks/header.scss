@@ -134,7 +134,8 @@
     background-color: rgba(86, 64, 52, 0.7);
     background-image: url("../img/banner-catalog.png");
     background-size: 1366px 261px;
-    min-height: 261px;
+    min-height: 239px;
+    padding-bottom: 22px;
     filter: none;
 
     @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
@@ -159,6 +160,7 @@
   font-size: 35px;
   line-height: 44px;
   margin-top: 0;
+  padding-top: 0;
   margin-bottom: 0;
   padding-left: 0;
   letter-spacing: -0.02em;
@@ -353,6 +355,10 @@
     background-position: 43% center;
     min-height: 463px;
     background-size: 1320px 479px;
+
+    &--catalog {
+      min-height: 239px;
+    }
   }
 
   .header__banner h1 {
@@ -360,17 +366,22 @@
     padding-top: 5px;
   }
 
+  .header__banner p {
+    width: 247px;
+  }
+
   .header__banner--catalog h1 {
     padding-top: 22px;
+    font-size: 34px;
+    line-height: 44px;
+    width: 248px;
+    letter-spacing: 0;
   }
 
   .header__banner--catalog p {
     padding-top: 2px;
     padding-left: 0;
-  }
-
-  .header__banner p {
-    width: 247px;
+    width: initial;
   }
 }
 
@@ -452,6 +463,14 @@
     width: 240px;
   }
 
+  .header__banner--catalog h1 {
+    font-size: 34px;
+    line-height: 44px;
+    width: initial;
+    padding-top: 17px;
+    padding-bottom: 3px;
+  }
+
   .header__banner p {
     font-size: 34px;
     line-height: 44px;
@@ -459,6 +478,8 @@
   }
 
   .header__banner--catalog p {
+    font-size: 22px;
+    line-height: 26px;
     text-align: center;
     width: 247px;
     padding-top: 0;

@@ -21,9 +21,9 @@
   var filterSection = document.querySelectorAll('.catalog__filter-section');
   var filterInputs = document.querySelectorAll('.catalog__filter-inputs');
   var addToCartBtn = document.querySelector('.product__description-add-to-card');
-  var addCartModal = document.querySelector('.product__add-cart-modal');
-  var addCartModalWindow = document.querySelector('.product__add-cart-modal-window');
-  var addCartCloseBtn = document.querySelector('.product__add-cart-modal-window-close');
+  var addCartModal = document.querySelector('.product-add-cart-modal');
+  var addCartModalWindow = document.querySelector('.product-add-cart-modal__window');
+  var addCartCloseBtn = document.querySelector('.product-add-cart-modal__window-close');
   var loginBtn = document.querySelector('.header__tools a');
   var loginModal = document.querySelector('.modal-login');
   var loginCloseBtn = document.querySelector('.modal-login__close');
@@ -33,6 +33,7 @@
   var emailInput = document.querySelector('input[name="email"');
   var isStorageSupport = true;
   var storageEmail = '';
+  var $ = window.jQuery;
 
   try {
     storageEmail = localStorage.getItem('email');
@@ -50,6 +51,8 @@
       return;
     }
     element.classList.remove('catalog__filter--visible');
+    element.classList.remove('catalog__filter--nojs');
+    filterCloseBtn.classList.remove('catalog__filter-close-btn--nojs');
   };
 
   var filterTriggersOnLoad = (element, type, handler) => {
@@ -167,30 +170,30 @@
   });
 
   setListener(addToCartBtn, 'click', () => {
-    addCartModal.classList.add('product__add-cart-modal--visible');
+    addCartModal.classList.add('product-add-cart-modal--visible');
     addCartModalWindow.focus();
   });
 
   setListener(addToCartBtn, 'keydown', (evt) => {
     if (evt.key === 'Enter') {
-      addCartModal.classList.add('product__add-cart-modal--visible');
+      addCartModal.classList.add('product-add-cart-modal--visible');
       addCartModalWindow.focus();
     }
   });
 
   setListener(addCartCloseBtn, 'click', () => {
-    addCartModal.classList.remove('product__add-cart-modal--visible');
+    addCartModal.classList.remove('product-add-cart-modal--visible');
   });
 
   setListener(document, 'click', (evt) => {
     if (evt.target === addCartModal) {
-      addCartModal.classList.remove('product__add-cart-modal--visible');
+      addCartModal.classList.remove('product-add-cart-modal--visible');
     }
   });
 
   setListener(document, 'keydown', (evt) => {
     if (addCartModal && evt.key === 'Escape') {
-      addCartModal.classList.remove('product__add-cart-modal--visible');
+      addCartModal.classList.remove('product-add-cart-modal--visible');
     }
   });
 
@@ -269,30 +272,33 @@
 
   onLoadFilter(filterContainer);
 
-  var photos = [
-    'img/gold-necklace-for-women.png',
-    'img/pretty-gold-necklace.png',
-    'img/womens-necklace-set.png'
-  ];
+  function productCardGallery() {
+    var photos = [
+      'img/gold-necklace-for-women.png',
+      'img/pretty-gold-necklace.png',
+      'img/womens-necklace-set.png'
+    ];
 
-  var thumbnails = document.querySelectorAll('.product__images-preview img');
-  var fullPhoto = document.querySelector('.product__images-main img');
+    var thumbnails = document.querySelectorAll('.product__images-preview img');
+    var fullPhoto = document.querySelector('.product__images-main img');
 
-  var addThumbnailClickHandler = function (thumbnail, photo) {
-    thumbnail.addEventListener('click', function () {
-      fullPhoto.src = photo;
-    });
-  };
+    var addThumbnailClickHandler = function (thumbnail, photo) {
+      thumbnail.addEventListener('click', function () {
+        fullPhoto.src = photo;
+      });
+    };
 
-  for (var g = 0; g < thumbnails.length; g++) {
-    addThumbnailClickHandler(thumbnails[g], photos[g]);
+    for (var g = 0; g < thumbnails.length; g++) {
+      addThumbnailClickHandler(thumbnails[g], photos[g]);
+    }
   }
 
-  // eslint-disable-next-line no-undef
+  productCardGallery();
+
   var mainSlider = $('.new-in__slider');
   mainSlider.addClass('owl-carousel').owlCarousel({
     items: 4,
-    loop: true,
+    loop: false,
     autoplay: false,
     autoplayTimeout: 3000,
     autoplayHoverPause: true,
@@ -323,9 +329,7 @@
   });
   mainSlider.owlCarousel();
 
-  // eslint-disable-next-line no-undef
   $(function () {
-    // eslint-disable-next-line no-undef
     var sliderRange = $('#slider-range');
     sliderRange.slider({
       range: true,
@@ -333,13 +337,10 @@
       max: 198,
       values: [55, 155],
       slide: (event, ui) => {
-        // eslint-disable-next-line no-undef
         $('#amount').val('$' + ui.values[0] + ' '.repeat(21) + '$' + ui.values[1]);
       }
     });
-    // eslint-disable-next-line no-undef
     $('#amount').val('$' + $('#slider-range').slider('values', 0) + ' '.repeat(21) + '$'
-      // eslint-disable-next-line no-undef
       + $('#slider-range').slider('values', 1));
   });
 })();

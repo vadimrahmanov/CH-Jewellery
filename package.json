@@ -11,6 +11,7 @@
     "eslint": "4.16.0",
     "eslint-config-htmlacademy": "0.4.x",
     "gulp": "4.0.x",
+    "gulp-avif": "0.0.2",
     "gulp-babel": "^8.0.0",
     "gulp-concat": "^2.6.1",
     "gulp-concat-css": "^3.1.0",

@@ -1,5 +1,9 @@
 .new-in {
   margin-top: 120px;
+
+  &--product {
+    margin-top: 116px;
+  }
 }
 
 .new-in__container {
@@ -187,6 +191,10 @@
 @media (max-width: $tablet) {
   .new-in {
     margin-top: 70px;
+
+    &--product {
+      margin-top: 66px;
+    }
   }
 
   .new-in__shop-now {
@@ -267,6 +275,10 @@
 @media (max-width: $mobile) {
   .new-in {
     margin-top: 60px;
+
+    &--product {
+      margin-top: 56px;
+    }
   }
 
   .new-in__pagination {

@@ -10,6 +10,15 @@
   <title>Jewellery | Main</title>
   <link rel="icon" href="img/favicon.ico">
   <link rel="stylesheet" href="css/style.min.css">
+  <link rel="preload" href="fonts/cormorant-garamond.woff2" crossorigin="anonymous" as="font">
+  <link rel="preload" href="fonts/cormorant-garamond-italic.woff2" crossorigin="anonymous" as="font">
+  <link rel="preload" href="fonts/cormorant-garamond-medium.woff2" crossorigin="anonymous" as="font">
+  <link rel="preload" href="fonts/cormorant-garamond-medium-italic.woff2" crossorigin="anonymous" as="font">
+  <link rel="preload" href="fonts/cormorant-garamond-semi-bold.woff2" crossorigin="anonymous" as="font">
+  <link rel="preload" href="fonts/cormorant-garamond-bold.woff2" crossorigin="anonymous" as="font">
+  <link rel="preload" href="fonts/poppins.woff2" crossorigin="anonymous" as="font">
+  <link rel="preload" href="fonts/poppins-medium.woff2" crossorigin="anonymous" as="font">
+  <link rel="preload" href="fonts/poppins-bold.woff2" crossorigin="anonymous" as="font">
 </head>
 
 <body>
@@ -17,26 +26,27 @@
     <div class="header__container">
       <div class="header__user-tools">
         <button class="header__nav-btn" type="button">
-          <svg class="header__nav-btn-img" width="28" height="18">
+          <svg class="header__nav-btn-img" width="28" height="18" aria-label="Open/Close navigation image">
             <use xlink:href="img/sprite_auto.svg#nav-open"></use>
           </svg>
           <span class="visually-hidden">Open and close menu</span>
         </button>
         <form class="header__search" method="GET" action="http://echo.htmlacademy.ru">
-          <svg class="header__search-icon" width="16" height="16">
+          <svg class="header__search-icon" width="16" height="16" aria-label="search bar image">
             <use xlink:href="img/sprite_auto.svg#search-icon"></use>
           </svg>
-          <input type="text" name="search-for" placeholder="Type here to search">
+          <label class="visually-hidden" for="search-bar">Search</label>
+          <input id="search-bar" type="text" name="search-for" placeholder="Type here to search">
         </form>
         <a class="header__logo" href="index.html">
-          <svg class="header__logo-image" width="66" height="66">
+          <svg class="header__logo-image" width="66" height="66" aria-label="Logo image">
             <use xlink:href="img/sprite_auto.svg#logo"></use>
           </svg>
         </a>
         <div class="header__tools">
           <a href="login.html">Login</a>
           <a href="">Cart 0
-            <svg class="header__tools-cart-image" width="20" height="20">
+            <svg class="header__tools-cart-image" width="20" height="20" aria-label="Cart image">
               <use xlink:href="img/sprite_auto.svg#cart-icon"></use>
             </svg>
           </a>
@@ -45,7 +55,7 @@
       <nav class="header__navigation">
         <ul>
           <li>
-            <a href="">What’s new</a>
+            <a href="index.html">What’s new</a>
           </li>
           <li>
             <a href="">Chokers</a>
@@ -71,43 +81,53 @@
             <a href="">Contact Us</a>
           </li>
           <li class="header__add-nav-login">
-            <a href="">Login</a>
+            <a href="login.html">Login</a>
           </li>
         </ul>
       </nav>
+    </div>
   </header>
-  <div class="modal-login__window modal-login__window--nojs" tabindex="0">
-    <button class="modal-login__close modal-login__close--nojs" tabindex="0">
-      <span class="visually-hidden">Close window</span>
-    </button>
-    <h2>Log In</h2>
-    <form class="modal-login-form">
-      <label>
-        <span class="visually-hidden">Your E-mail</span>
-        <input type="email" name="email" placeholder="Your E-mail" required>
-      </label>
-      <label>
-        <span class="visually-hidden">Your E-mail</span>
-        <input type="password" name="password" placeholder="Password" required>
-      </label>
-      <a href="">Forgot your password?</a>
-      <button type="submit">Log In</button>
-      <p>
-        Don’t have an account?
-        <a href="">Sign up</a>
-      </p>
-    </form>
-  </div>
+  <main>
+    <h1 class="visually-hidden">Login page</h1>
+    <section>
+      <h2 class="visually-hidden">Log in to your account</h2>
+      <div class="modal-login modal-login--nojs">
+        <div class="modal-login__window modal-login__window--nojs" tabindex="0">
+          <button class="modal-login__close modal-login__close--nojs" tabindex="0">
+            <span class="visually-hidden">Close window</span>
+          </button>
+          <h2>Log In</h2>
+          <form class="modal-login-form">
+            <label>
+              <span class="visually-hidden">Your E-mail</span>
+              <input type="email" name="email" placeholder="Your E-mail" required>
+            </label>
+            <label>
+              <span class="visually-hidden">Your E-mail</span>
+              <input type="password" name="password" placeholder="Password" required>
+            </label>
+            <a href="">Forgot your password?</a>
+            <button type="submit">Log In</button>
+            <p>
+              Don’t have an account?
+              <a href="">Sign up</a>
+            </p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
   <footer class="footer">
     <div class="footer__container">
       <div class="footer__subscription">
         <h2>The good stuff in your inbox</h2>
         <h3>News and updates from CH. No spam, we promise.</h3>
         <form method="POST" action="http://echo.htmlacademy.ru">
-          <input type="email" name="added-to-subscription-list" placeholder="Your E-mail">
+          <label class="visually-hidden" for="subscription-email">Email</label>
+          <input id="subscription-email" type="email" name="added-to-subscription-list" placeholder="Your E-mail">
           <button type="submit">
             Sign Up
-            <svg width="29" height="9">
+            <svg width="29" height="9" aria-label="Subscribe image">
               <use xlink:href="img/sprite_auto.svg#arrow-right-icon"></use>
             </svg>
           </button>
@@ -145,7 +165,7 @@
         <ul class="footer__social-medias">
           <li>
             <a href="">
-              <svg class="footer__social-medias-fb-icon" width="8" height="15">
+              <svg class="footer__social-medias-fb-icon" width="8" height="15" aria-label="Facebook logo">
                 <use xlink:href="img/sprite_auto.svg#fb-icon"></use>
               </svg>
               Facebook
@@ -153,7 +173,7 @@
           </li>
           <li>
             <a href="">
-              <svg width="15" height="15">
+              <svg width="15" height="15" aria-label="Instagram logo">
                 <use xlink:href="img/sprite_auto.svg#instagram-icon"></use>
               </svg>
               Instagram
@@ -161,7 +181,7 @@
           </li>
           <li>
             <a href="">
-              <svg width="15" height="15">
+              <svg width="15" height="15" aria-label="Pinterest logo">
                 <use xlink:href="img/sprite_auto.svg#pinterest-icon"></use>
               </svg>
               Pinterest
@@ -169,7 +189,7 @@
           </li>
           <li>
             <a href="">
-              <svg width="15" height="13">
+              <svg width="15" height="13" aria-label="Twitter logo">
                 <use xlink:href="img/sprite_auto.svg#twitter-icon"></use>
               </svg>
               Twitter
