@@ -82,9 +82,19 @@
 }
 
 .catalog__filter-inputs {
+  list-style-type: none;
+  padding-inline-start: 0;
   display: flex;
   flex-direction: column;
   padding-bottom: 13px;
+  margin-block-start: 0;
+  margin-block-end: 0;
+}
+
+.catalog__filter-inputs li {
+  margin-bottom: 13px;
+  padding-left: 31px;
+  position: relative;
 }
 
 .catalog__filter-inputs-range {
@@ -105,9 +115,6 @@
   font-weight: 500;
   line-height: 18px;
   color: $black;
-  padding-left: 35px;
-  position: relative;
-  margin-bottom: 13px;
 
   &::before {
     content: "";
