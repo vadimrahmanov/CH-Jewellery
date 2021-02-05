@@ -1,6 +1,8 @@
 'use strict';
 
 (function () {
+  var TRANSPARENT_COLOR = 'rgba(255, 255, 255, 0.75)';
+  var WHITE_COLOR = '#ffffff';
   var userTools = document.querySelector('.header__user-tools');
   var navBtn = document.querySelector('.header__user-tools button');
   var navBtnImg = document.querySelector('.header__nav-btn-img');
@@ -115,18 +117,18 @@
     userTools.classList.toggle('header__user-tools--nav-opened');
     logoImg.classList.toggle('header__logo-image--nav-opened');
     searchInput.style.border = 'none';
-    searchInput.style.color = '#ffffff';
+    searchInput.style.color = WHITE_COLOR;
     searchInputIcon.classList.toggle('header__search-icon--nav-opened');
 
     for (var i = 0; i < navLinks.length; i++) {
-      navLinks[i].style.color = '#ffffff';
+      navLinks[i].style.color = WHITE_COLOR;
     }
 
     for (var j = 0; j < addNav.length; j++) {
-      addNav[j].style.color = 'rgba(255, 255, 255, 0.75)';
+      addNav[j].style.color = TRANSPARENT_COLOR;
     }
 
-    addNavLogin.style.color = '#ffffff';
+    addNavLogin.style.color = WHITE_COLOR;
     search.classList.toggle('header__search--nav-opened');
     navigation.classList.toggle('header__navigation--nav-opened');
     cartImg.classList.toggle('header__tools-cart-image--nav-opened');
@@ -203,18 +205,18 @@
     userTools.classList.toggle('header__user-tools--nav-opened');
     logoImg.classList.toggle('header__logo-image--nav-opened');
     searchInput.style.border = 'none';
-    searchInput.style.color = '#ffffff';
+    searchInput.style.color = WHITE_COLOR;
     searchInputIcon.classList.toggle('header__search-icon--nav-opened');
 
     for (var i = 0; i < navLinks.length; i++) {
-      navLinks[i].style.color = '#ffffff';
+      navLinks[i].style.color = WHITE_COLOR;
     }
 
     for (var j = 0; j < addNav.length; j++) {
       addNav[j].style.color = 'rgba(255, 255, 255, 0.75)';
     }
 
-    addNavLogin.style.color = '#ffffff';
+    addNavLogin.style.color = WHITE_COLOR;
     search.classList.toggle('header__search--nav-opened');
     navigation.classList.toggle('header__navigation--nav-opened');
     cartImg.classList.toggle('header__tools-cart-image--nav-opened');

@@ -45,7 +45,7 @@
         </a>
         <div class="header__tools">
           <a href="login.html" tabindex="0">Login</a>
-          <a href="">Cart 0
+          <a href="#">Cart 0
             <svg class="header__tools-cart-image" width="20" height="20" aria-label="Cart image">
               <use xlink:href="img/sprite_auto.svg#cart-icon"></use>
             </svg>
@@ -58,27 +58,27 @@
             <a href="index.html">What’s new</a>
           </li>
           <li>
-            <a href="">Chokers</a>
+            <a href="#">Chokers</a>
           </li>
           <li>
-            <a href="">Necklaces</a>
+            <a href="#">Necklaces</a>
           </li>
           <li>
-            <a href="">Rings</a>
+            <a href="#">Rings</a>
           </li>
           <li>
-            <a href="">Earrings</a>
+            <a href="#">Earrings</a>
           </li>
         </ul>
         <ul class="header__add-nav">
           <li>
-            <a href="">About CH</a>
+            <a href="#">About CH</a>
           </li>
           <li>
-            <a href="">Stores & Hours</a>
+            <a href="#">Stores & Hours</a>
           </li>
           <li>
-            <a href="">Contact Us</a>
+            <a href="#">Contact Us</a>
           </li>
           <li class="header__add-nav-login">
             <a href="login.html">Login</a>
@@ -105,56 +105,32 @@
               <h3 class="trigger" tabindex="0">Product</h3>
               <div class="catalog__filter-section catalog__filter-section--opened">
                 <div class="catalog__filter-inputs filter-visible">
-                  <label>
-                    <input type="checkbox" name="products" value="Necklaces" checked>
-                    <span></span>
-                    Necklaces
-                  </label>
-                  <label>
-                    <input type="checkbox" name="products" value="Chokers" checked>
-                    <span></span>
-                    Chokers
-                  </label>
-                  <label>
-                    <input type="checkbox" name="products" value="Rings">
-                    <span></span>
-                    Rings
-                  </label>
-                  <label>
-                    <input type="checkbox" name="products" value="Earrings" checked>
-                    <span></span>
-                    Earrings
-                  </label>
+                  <input id="necklaces" type="checkbox" name="products" value="Necklaces" checked>
+                  <label for="necklaces">Necklaces</label>
+                  <input id="chokers" type="checkbox" name="products" value="Chokers" checked>
+                  <label for="chokers">Chokers</label>
+                  <input id="rings" type="checkbox" name="products" value="Rings">
+                  <label for="rings">Rings</label>
+                  <input id="earrings" type="checkbox" name="products" value="Earrings" checked>
+                  <label for="earrings">Earrings</label>
                 </div>
               </div>
               <h3 class="trigger" tabindex="0">Material</h3>
               <div class="catalog__filter-section">
                 <div class="catalog__filter-inputs">
-                  <label>
-                    <input type="checkbox" name="material" value="Gold">
-                    <span></span>
-                    Gold
-                  </label>
-                  <label>
-                    <input type="checkbox" name="material" value="Silver">
-                    <span></span>
-                    Silver
-                  </label>
+                  <input id="gold" type="checkbox" name="material" value="Gold">
+                  <label for="gold">Gold</label>
+                  <input id="silver" type="checkbox" name="material" value="Silver">
+                  <label for="silver">Silver</label>
                 </div>
               </div>
               <h3 class="trigger" tabindex="0">Collection</h3>
               <div class="catalog__filter-section">
                 <div class="catalog__filter-inputs">
-                  <label>
-                    <input type="checkbox" name="collection" value="Pink flamingo">
-                    <span></span>
-                    Pink flamingo
-                  </label>
-                  <label>
-                    <input type="checkbox" name="collection" value="Dreams">
-                    <span></span>
-                    Dreams
-                  </label>
+                  <input id="flamingo" type="checkbox" name="collection" value="Pink flamingo">
+                  <label for="flamingo">Pink flamingo</label>
+                  <input id="dreams" type="checkbox" name="collection" value="Dreams">
+                  <label for="dreams">Dreams</label>
                 </div>
               </div>
               <h3 class="trigger" tabindex="0">Price</h3>
@@ -175,9 +151,12 @@
               <article>
                 <a href="product.html">
                   <picture>
-                    <source type="image/avif" srcset="img/double-pearl-earrings.avif">
-                    <source type="image/webp" srcset="img/double-pearl-earrings.webp 1x">
-                    <img class="catalog__product-image" src="img/double-pearl-earrings.png" width="270" height="272"
+                    <source type="image/avif"
+                      srcset="img/double-pearl-earrings.avif 1x, img/double-pearl-earrings@2x.avif 2x">
+                    <source type="image/webp"
+                      srcset="img/double-pearl-earrings.webp 1x, img/double-pearl-earrings@2x.webp 2x">
+                    <img class="catalog__product-image" src="img/double-pearl-earrings.png"
+                      srcset="img/double-pearl-earrings@2x.png 2x" width="270" height="272"
                       alt="Double pearl earrings picture">
                     <!--Size: 270x272 / Retina Size: 540x544-->
                   </picture>
@@ -190,9 +169,12 @@
               <article>
                 <a href="product.html">
                   <picture>
-                    <source type="image/avif" srcset="img/black-choker-gold-bead.avif">
-                    <source type="image/webp" srcset="img/black-choker-gold-bead.webp 1x">
-                    <img class="catalog__product-image" src="img/black-choker-gold-bead.png" width="270" height="272"
+                    <source type="image/avif"
+                      srcset="img/black-choker-gold-bead.avif 1x, img/black-choker-gold-bead@2x.avif 2x">
+                    <source type="image/webp"
+                      srcset="img/black-choker-gold-bead.webp 1x, img/black-choker-gold-bead@2x.webp 2x">
+                    <img class="catalog__product-image" src="img/black-choker-gold-bead.png"
+                      srcset="img/black-choker-gold-bead@2x.png 2x" width="270" height="272"
                       alt="Choker with gold bead picture">
                     <!--Size: 270x272 / Retina Size: 540x544-->
                   </picture>
@@ -205,9 +187,12 @@
               <article>
                 <a href="product.html">
                   <picture>
-                    <source type="image/avif" srcset="img/gold-layered-necklace.avif">
-                    <source type="image/webp" srcset="img/gold-layered-necklace.webp 1x">
-                    <img class="catalog__product-image" src="img/gold-layered-necklace.png" width="270" height="272"
+                    <source type="image/avif"
+                      srcset="img/gold-layered-necklace.avif 1x, img/gold-layered-necklace@2x.avif 2x">
+                    <source type="image/webp"
+                      srcset="img/gold-layered-necklace.webp 1x, img/gold-layered-necklace@2x.webp 2x">
+                    <img class="catalog__product-image" src="img/gold-layered-necklace.png"
+                      srcset="img/gold-layered-necklace@2x.png 2x" width="270" height="272"
                       alt="Gold layered necklace picture">
                     <!--Size: 270x272 / Retina Size: 540x544-->
                   </picture>
@@ -220,9 +205,12 @@
               <article>
                 <a href="product.html">
                   <picture>
-                    <source type="image/avif" srcset="img/blue-gemstone-pendant.avif">
-                    <source type="image/webp" srcset="img/blue-gemstone-pendant.webp 1x">
-                    <img class="catalog__product-image" src="img/blue-gemstone-pendant.png" width="270" height="272"
+                    <source type="image/avif"
+                      srcset="img/blue-gemstone-pendant.avif 1x, img/blue-gemstone-pendant@2x.avif 2x">
+                    <source type="image/webp"
+                      srcset="img/blue-gemstone-pendant.webp 1x, img/blue-gemstone-pendant@2x.webp 2x">
+                    <img class="catalog__product-image" src="img/blue-gemstone-pendant.png"
+                      srcset="img/blue-gemstone-pendant@2x.png 2x" width="270" height="272"
                       alt="Blue gemstone pendant picture">
                     <!--Size: 270x272 / Retina Size: 540x544-->
                   </picture>
@@ -235,10 +223,10 @@
               <article>
                 <a href="product.html">
                   <picture>
-                    <source type="image/avif" srcset="img/boho-earrings.avif">
-                    <source type="image/webp" srcset="img/boho-earrings.webp 1x">
-                    <img class="catalog__product-image" src="img/boho-earrings.png" width="270" height="272"
-                      alt="Boho earrings picture">
+                    <source type="image/avif" srcset="img/boho-earrings.avif 1x, img/boho-earrings@2x.avif 2x">
+                    <source type="image/webp" srcset="img/boho-earrings.webp 1x, img/boho-earrings@2x.webp 2x">
+                    <img class="catalog__product-image" src="img/boho-earrings.png" srcset="img/boho-earrings@2x.png 2x"
+                      width="270" height="272" alt="Boho earrings picture">
                     <!--Size: 270x272 / Retina Size: 540x544-->
                   </picture>
                 </a>
@@ -250,10 +238,10 @@
               <article>
                 <a href="product.html">
                   <picture>
-                    <source type="image/avif" srcset="img/bird-necklace.avif">
-                    <source type="image/webp" srcset="img/bird-necklace.webp 1x">
-                    <img class="catalog__product-image" src="img/bird-necklace.png" width="270" height="272"
-                      alt="Gold bird necklace picture">
+                    <source type="image/avif" srcset="img/bird-necklace.avif 1x, img/bird-necklace@2x.avif 2x">
+                    <source type="image/webp" srcset="img/bird-necklace.webp 1x, img/bird-necklace@2x.webp 2x">
+                    <img class="catalog__product-image" src="img/bird-necklace.png" srcset="img/bird-necklace@2x.png 2x"
+                      width="270" height="272" alt="Gold bird necklace picture">
                     <!--Size: 270x272 / Retina Size: 540x544-->
                   </picture>
                 </a>
@@ -265,10 +253,13 @@
               <article>
                 <a href="product.html">
                   <picture>
-                    <source type="image/avif" srcset="img/black-leather-choker-necklace.avif">
-                    <source type="image/webp" srcset="img/black-leather-choker-necklace.webp 1x">
-                    <img class="catalog__product-image" src="img/black-leather-choker-necklace.png" width="270"
-                      height="272" alt="Black leather choker picture">
+                    <source type="image/avif"
+                      srcset="img/black-leather-choker-necklace.avif 1x, img/black-leather-choker-necklace@2x.avif 2x">
+                    <source type="image/webp"
+                      srcset="img/black-leather-choker-necklace.webp 1x, img/black-leather-choker-necklace@2x.webp 2x">
+                    <img class="catalog__product-image" src="img/black-leather-choker-necklace.png"
+                      srcset="img/black-leather-choker-necklace@2x.png 2x" width="270" height="272"
+                      alt="Black leather choker picture">
                     <!--Size: 270x272 / Retina Size: 540x544-->
                   </picture>
                 </a>
@@ -280,9 +271,13 @@
               <article>
                 <a href="product.html">
                   <picture>
-                    <source type="image/webp" srcset="img/purple-gemstone-necklace-catalog.webp 1x">
-                    <img class="catalog__product-image" src="img/purple-gemstone-necklace-catalog.png" width="270"
-                      height="272" alt="Necklace with amethyst picture">
+                    <source type="image/avif"
+                      srcset="img/purple-gemstone-necklace-catalog.avif 1x, img/purple-gemstone-necklace-catalog@2x.avif 2x">
+                    <source type="image/webp"
+                      srcset="img/purple-gemstone-necklace-catalog.webp 1x, img/purple-gemstone-necklace-catalog@2x.webp 2x">
+                    <img class="catalog__product-image" src="img/purple-gemstone-necklace-catalog.png"
+                      srcset="img/purple-gemstone-necklace-catalog@2x.png 2x" width="270" height="272"
+                      alt="Necklace with amethyst picture">
                     <!--Size: 270x272 / Retina Size: 540x544-->
                   </picture>
                 </a>
@@ -294,10 +289,10 @@
               <article>
                 <a href="product.html">
                   <picture>
-                    <source type="image/avif" srcset="img/elephant-earrings.avif">
-                    <source type="image/webp" srcset="img/elephant-earrings.webp 1x">
-                    <img class="catalog__product-image" src="img/elephant-earrings.png" width="270" height="272"
-                      alt="Elephant earrings picture">
+                    <source type="image/avif" srcset="img/elephant-earrings.avif 1x, img/elephant-earrings@2x.avif 2x">
+                    <source type="image/webp" srcset="img/elephant-earrings.webp 1x, img/elephant-earrings@2x.webp 2x">
+                    <img class="catalog__product-image" src="img/elephant-earrings.png"
+                      srcset="img/elephant-earrings@2x.png 2x" width="270" height="272" alt="Elephant earrings picture">
                     <!--Size: 270x272 / Retina Size: 540x544-->
                   </picture>
                 </a>
@@ -309,9 +304,12 @@
               <article>
                 <a href="product.html">
                   <picture>
-                    <source type="image/avif" srcset="img/threader-necklace-closeup.avif">
-                    <source type="image/webp" srcset="img/threader-necklace-closeup.webp 1x">
-                    <img class="catalog__product-image" src="img/threader-necklace-closeup.png" width="270" height="272"
+                    <source type="image/avif"
+                      srcset="img/threader-necklace-closeup.avif 1x, img/threader-necklace-closeup@2x.avif 2x">
+                    <source type="image/webp"
+                      srcset="img/threader-necklace-closeup.webp 1x, img/threader-necklace-closeup@2x.webp 2x">
+                    <img class="catalog__product-image" src="img/threader-necklace-closeup.png"
+                      srcset="img/threader-necklace-closeup@2x.png 2x" width="270" height="272"
                       alt="Threader necklace picture">
                     <!--Size: 270x272 / Retina Size: 540x544-->
                   </picture>
@@ -324,9 +322,12 @@
               <article>
                 <a href="product.html">
                   <picture>
-                    <source type="image/avif" srcset="img/origami-crane-necklace.avif">
-                    <source type="image/webp" srcset="img/origami-crane-necklace.webp 1x">
-                    <img class="catalog__product-image" src="img/origami-crane-necklace.png" width="270" height="272"
+                    <source type="image/avif"
+                      srcset="img/origami-crane-necklace.avif 1x, img/origami-crane-necklace@2x.avif 2x">
+                    <source type="image/webp"
+                      srcset="img/origami-crane-necklace.webp 1x, img/origami-crane-necklace@2x.webp 2x">
+                    <img class="catalog__product-image" src="img/origami-crane-necklace.png"
+                      srcset="img/origami-crane-necklace@2x.png 2x" width="270" height="272"
                       alt="Origami crane necklace picture">
                     <!--Size: 270x272 / Retina Size: 540x544-->
                   </picture>
@@ -339,10 +340,10 @@
               <article>
                 <a href="product.html">
                   <picture>
-                    <source type="image/avif" srcset="img/marble-earrings.avif">
-                    <source type="image/webp" srcset="img/marble-earrings.webp 1x">
-                    <img class="catalog__product-image" src="img/marble-earrings.png" width="270" height="272"
-                      alt="Marble earrings">
+                    <source type="image/avif" srcset="img/marble-earrings.avif 1x, img/marble-earrings@2x.avif 2x">
+                    <source type="image/webp" srcset="img/marble-earrings.webp 1x, img/marble-earrings@2x.webp 2x">
+                    <img class="catalog__product-image" src="img/marble-earrings.png"
+                      srcset="img/marble-earrings@2x.png 2x" width="270" height="272" alt="Marble earrings">
                     <!--Size: 270x272 / Retina Size: 540x544-->
                   </picture>
                 </a>
@@ -400,35 +401,35 @@
       <div class="footer__navigation">
         <ul class="footer__nav-info">
           <li>
-            <a href="">Ordering & Payment</a>
+            <a href="#">Ordering & Payment</a>
           </li>
           <li>
-            <a href="">Terms & Conditions</a>
+            <a href="#">Terms & Conditions</a>
           </li>
           <li>
-            <a href="">Returns & Exchanges</a>
+            <a href="#">Returns & Exchanges</a>
           </li>
           <li>
-            <a href="">Delivery</a>
+            <a href="#">Delivery</a>
           </li>
         </ul>
         <ul class="footer__nav-company">
           <li>
-            <a href="">About CH</a>
+            <a href="#">About CH</a>
           </li>
           <li>
-            <a href="">Stores & Hours</a>
+            <a href="#">Stores & Hours</a>
           </li>
           <li>
-            <a href="">Jobs</a>
+            <a href="#">Jobs</a>
           </li>
           <li>
-            <a href="">Contact Us</a>
+            <a href="#">Contact Us</a>
           </li>
         </ul>
         <ul class="footer__social-medias">
           <li>
-            <a href="">
+            <a href="#">
               <svg class="footer__social-medias-fb-icon" width="8" height="15" aria-label="Facebook logo">
                 <use xlink:href="img/sprite_auto.svg#fb-icon"></use>
               </svg>
@@ -436,7 +437,7 @@
             </a>
           </li>
           <li>
-            <a href="">
+            <a href="#">
               <svg width="15" height="15" aria-label="Instagram logo">
                 <use xlink:href="img/sprite_auto.svg#instagram-icon"></use>
               </svg>
@@ -444,7 +445,7 @@
             </a>
           </li>
           <li>
-            <a href="">
+            <a href="#">
               <svg width="15" height="15" aria-label="Pinterest logo">
                 <use xlink:href="img/sprite_auto.svg#pinterest-icon"></use>
               </svg>
@@ -452,7 +453,7 @@
             </a>
           </li>
           <li>
-            <a href="">
+            <a href="#">
               <svg width="15" height="13" aria-label="Twitter logo">
                 <use xlink:href="img/sprite_auto.svg#twitter-icon"></use>
               </svg>
@@ -478,11 +479,11 @@
           <span class="visually-hidden">Your E-mail</span>
           <input type="password" name="password" placeholder="Password" required>
         </label>
-        <a href="">Forgot your password?</a>
+        <a href="#">Forgot your password?</a>
         <button type="submit">Log In</button>
         <p>
           Don’t have an account?
-          <a href="">Sign up</a>
+          <a href="#">Sign up</a>
         </p>
       </form>
     </div>
