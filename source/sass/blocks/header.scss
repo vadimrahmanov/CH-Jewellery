@@ -11,7 +11,7 @@
   display: flex;
   justify-content: space-between;
   padding-left: 98px;
-  padding-right: 98px;
+  padding-right: 90px;
   padding-top: 42px;
   padding-bottom: 49px;
 }
@@ -38,7 +38,7 @@
 }
 
 .header__tools {
-  width: 119px;
+  width: 127px;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
@@ -89,6 +89,7 @@
   font-weight: 500;
   line-height: 21px;
   color: $black;
+  padding-right: 10px;
   cursor: pointer;
 
   &:hover {
@@ -204,11 +205,13 @@
   .header__nav-btn {
     display: block;
     position: absolute;
-    top: 53px;
+    top: 39px;
     left: 38px;
     background-color: transparent;
     border: 0;
     visibility: hidden;
+    padding-top: 15px;
+    padding-bottom: 15px;
 
     &--close-nav {
       visibility: visible;
@@ -333,8 +336,8 @@
     display: inherit;
     font-size: 0;
     position: absolute;
-    right: 44px;
-    top: 53px;
+    right: 34px;
+    top: 54px;
   }
 
   .header__tools-cart-image {
@@ -383,11 +386,15 @@
     padding-left: 0;
     width: initial;
   }
+
+  .nav-open {
+    display: none;
+  }
 }
 
 @media (max-width: $mobile) {
   .header__nav-btn {
-    top: 36px;
+    top: 22px;
     left: 8px;
   }
 
@@ -401,8 +408,8 @@
   }
 
   .header__tools a {
-    right: 14px;
-    top: 36px;
+    right: 4px;
+    top: 37px;
   }
 
   .header__user-tools {

@@ -61,11 +61,15 @@
   font-weight: 500;
   font-size: 14px;
   line-height: 21px;
-  color: $gray;
+  color: $white;
   background-color: transparent;
   border: 0;
   width: 77%;
   letter-spacing: -0.01em;
+
+  &::placeholder {
+    color: $gray;
+  }
 }
 
 .footer__subscription button {

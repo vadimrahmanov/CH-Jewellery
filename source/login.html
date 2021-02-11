@@ -36,7 +36,7 @@
             <use xlink:href="img/sprite_auto.svg#search-icon"></use>
           </svg>
           <label class="visually-hidden" for="search-bar">Search</label>
-          <input id="search-bar" type="text" name="search-for" placeholder="Type here to search">
+          <input id="search-bar" type="search" name="search-for" placeholder="Type here to search">
         </form>
         <a class="header__logo" href="index.html">
           <svg class="header__logo-image" width="66" height="66" aria-label="Logo image">
@@ -89,31 +89,28 @@
   </header>
   <main>
     <h1 class="visually-hidden">Login page</h1>
-    <section>
-      <h2 class="visually-hidden">Log in to your account</h2>
-      <div class="modal-login modal-login--nojs">
-        <div class="modal-login__window modal-login__window--nojs" tabindex="0">
-          <button class="modal-login__close modal-login__close--nojs" tabindex="0">
-            <span class="visually-hidden">Close window</span>
-          </button>
-          <h2>Log In</h2>
-          <form class="modal-login-form">
-            <label>
-              <span class="visually-hidden">Your E-mail</span>
-              <input type="email" name="email" placeholder="Your E-mail" required>
-            </label>
-            <label>
-              <span class="visually-hidden">Your E-mail</span>
-              <input type="password" name="password" placeholder="Password" required>
-            </label>
-            <a href="#">Forgot your password?</a>
-            <button type="submit">Log In</button>
-            <p>
-              Don’t have an account?
-              <a href="#">Sign up</a>
-            </p>
-          </form>
-        </div>
+    <section class="modal-login modal-login--nojs">
+      <div class="modal-login__window modal-login__window--nojs" tabindex="0">
+        <button class="modal-login__close modal-login__close--nojs" tabindex="6">
+          <span class="visually-hidden">Close window</span>
+        </button>
+        <h2>Log In</h2>
+        <form class="modal-login-form" action="http://echo.htmlacademy.ru" method="POST">
+          <label>
+            <span class="visually-hidden">Your E-mail</span>
+            <input id="email" type="email" name="email" placeholder="Your E-mail" required tabindex="1">
+          </label>
+          <label>
+            <span class="visually-hidden">Your E-mail</span>
+            <input type="password" name="password" placeholder="Password" required tabindex="2">
+          </label>
+          <a href="#" tabindex="3">Forgot your password?</a>
+          <button type="submit" tabindex="4">Log In</button>
+          <p>
+            Don’t have an account?
+            <a href="#" tabindex="5">Sign up</a>
+          </p>
+        </form>
       </div>
     </section>
   </main>

@@ -93,7 +93,7 @@
 
 .catalog__filter-inputs li {
   margin-bottom: 13px;
-  padding-left: 31px;
+  padding-left: 35px;
   position: relative;
 }
 
@@ -107,6 +107,7 @@
   padding-top: 12px;
   padding-left: 13px;
   outline: none;
+  width: 100%;
 }
 
 .catalog__filter-section label {
@@ -115,6 +116,7 @@
   font-weight: 500;
   line-height: 18px;
   color: $black;
+  cursor: pointer;
 
   &::before {
     content: "";
@@ -138,12 +140,20 @@ label.catalog__filter-inputs-range-label {
 }
 
 .catalog__filter-section input {
-  appearance: none;
+  display: none;
   margin: 0;
 }
 
 .catalog__filter-section input:checked + label::before {
   background-color: $brown;
+}
+
+.catalog__filter-section input:focus + label::before {
+  opacity: 0.4;
+}
+
+.catalog__filter-section input:focus + label {
+  color: $brown;
 }
 
 .catalog__filter-form button {
@@ -327,10 +337,8 @@ label.catalog__filter-inputs-range-label {
 
     &--visible {
       display: block;
-      position: absolute;
-      top: 111px;
-      left: -45px;
-      z-index: 5;
+      margin: 0 auto;
+      margin-top: 40px;
     }
 
     &--nojs {
@@ -485,17 +493,6 @@ label.catalog__filter-inputs-range-label {
 
   .catalog__filter-form {
     width: 290px;
-  }
-
-  .catalog__filter {
-    &--visible {
-      display: block;
-      position: absolute;
-      top: 111px;
-      left: 50%;
-      transform: translateX(-50%);
-      z-index: 5;
-    }
   }
 
   .catalog__filter-form button {

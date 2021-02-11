@@ -29,10 +29,12 @@
   var loginBtn = document.querySelector('.header__tools a');
   var loginModal = document.querySelector('.modal-login');
   var loginCloseBtn = document.querySelector('.modal-login__close');
-  var htmlBody = document.querySelector('body');
+  var body = document.querySelector('body');
+  var mainContainer = document.querySelector('main');
+  var footer = document.querySelector('footer');
+  var loginForm = document.querySelector('.modal-login-form');
   var loginBtnMobile = document.querySelector('.header__add-nav-login a');
-  var loginSubmitBtn = document.querySelector('.modal-login-form button');
-  var emailInput = document.querySelector('input[name="email"');
+  var emailInput = document.querySelector('input#email');
   var isStorageSupport = true;
   var storageEmail = '';
   var $ = window.jQuery;
@@ -93,12 +95,18 @@
     };
   };
 
+  var loginSubmit = () => {
+    body.classList.remove('modal-open');
+    loginModal.classList.remove('modal-login--visible');
+  };
+
   loginOnLoad(loginBtn);
   loginOnLoad(loginBtnMobile);
   addCartOnLoad(addToCartBtn);
 
   setListener(loginBtn, 'click', () => {
     loginModal.classList.add('modal-login--visible');
+    body.classList.add('modal-open');
     if (storageEmail) {
       emailInput.value = storageEmail;
     } else {
@@ -124,7 +132,7 @@
     search.classList.toggle('header__search--nav-opened');
     navigation.classList.toggle('header__navigation--nav-opened');
     cartImg.classList.toggle('header__tools-cart-image--nav-opened');
-    htmlBody.classList.add('nav-open');
+    body.classList.add('modal-open');
     if (storageEmail) {
       emailInput.value = storageEmail;
     } else {
@@ -135,6 +143,7 @@
   setListener(loginBtn, 'keydown', (evt) => {
     if (evt.key === 'Enter') {
       loginModal.classList.add('modal-login--visible');
+      body.classList.add('modal-open');
       if (storageEmail) {
         emailInput.value = storageEmail;
       } else {
@@ -143,58 +152,61 @@
     }
   });
 
-  setListener(loginSubmitBtn, 'click', (evt) => {
+  setListener(loginForm, 'submit', (evt) => {
     evt.preventDefault();
     if (isStorageSupport) {
       localStorage.setItem('email', emailInput.value);
     }
-    loginModal.classList.remove('modal-login--visible');
-    htmlBody.classList.remove('nav-open');
+    loginSubmit();
   });
 
   setListener(document, 'click', (evt) => {
     if (evt.target === loginModal) {
+      body.classList.remove('modal-open');
       loginModal.classList.remove('modal-login--visible');
-      htmlBody.classList.remove('nav-open');
     }
   });
 
   setListener(document, 'keydown', (evt) => {
     if (evt.key === 'Escape') {
-      loginModal.classList.remove('modal-login--visible');
-      htmlBody.classList.remove('nav-open');
+      loginSubmit();
     }
   });
 
   setListener(loginCloseBtn, 'click', () => {
+    body.classList.remove('modal-open');
     loginModal.classList.remove('modal-login--visible');
-    htmlBody.classList.remove('nav-open');
   });
 
   setListener(addToCartBtn, 'click', () => {
+    body.classList.add('modal-open');
     addCartModal.classList.add('product-add-cart-modal--visible');
     addCartModalWindow.focus();
   });
 
   setListener(addToCartBtn, 'keydown', (evt) => {
     if (evt.key === 'Enter') {
+      body.classList.add('modal-open');
       addCartModal.classList.add('product-add-cart-modal--visible');
       addCartModalWindow.focus();
     }
   });
 
   setListener(addCartCloseBtn, 'click', () => {
+    body.classList.remove('modal-open');
     addCartModal.classList.remove('product-add-cart-modal--visible');
   });
 
   setListener(document, 'click', (evt) => {
     if (evt.target === addCartModal) {
+      body.classList.remove('modal-open');
       addCartModal.classList.remove('product-add-cart-modal--visible');
     }
   });
 
   setListener(document, 'keydown', (evt) => {
     if (addCartModal && evt.key === 'Escape') {
+      body.classList.remove('modal-open');
       addCartModal.classList.remove('product-add-cart-modal--visible');
     }
   });
@@ -216,7 +228,8 @@
     search.classList.toggle('header__search--nav-opened');
     navigation.classList.toggle('header__navigation--nav-opened');
     cartImg.classList.toggle('header__tools-cart-image--nav-opened');
-    htmlBody.classList.toggle('nav-open');
+    mainContainer.classList.toggle('nav-open');
+    footer.classList.toggle('nav-open');
   });
 
   for (var i = 0; i < faqItem.length; i++) {
