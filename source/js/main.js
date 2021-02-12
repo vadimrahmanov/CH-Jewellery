@@ -132,6 +132,8 @@
     search.classList.toggle('header__search--nav-opened');
     navigation.classList.toggle('header__navigation--nav-opened');
     cartImg.classList.toggle('header__tools-cart-image--nav-opened');
+    mainContainer.classList.toggle('nav-open');
+    footer.classList.toggle('nav-open');
     body.classList.add('modal-open');
     if (storageEmail) {
       emailInput.value = storageEmail;
