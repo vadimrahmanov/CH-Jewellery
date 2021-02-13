@@ -97,6 +97,10 @@
   position: relative;
 }
 
+.catalog__filter-section input {
+  margin: 0;
+}
+
 .catalog__filter-inputs-range {
   font-family: $poppins;
   font-weight: 500;
@@ -130,6 +134,10 @@
   }
 }
 
+input.catalog__filter-inputs-range {
+  display: block;
+}
+
 label.catalog__filter-inputs-range-label {
   margin-bottom: 4px;
   padding-left: 27px;
@@ -137,11 +145,6 @@ label.catalog__filter-inputs-range-label {
   &::before {
     display: none;
   }
-}
-
-.catalog__filter-section input {
-  display: none;
-  margin: 0;
 }
 
 .catalog__filter-section input:checked + label::before {

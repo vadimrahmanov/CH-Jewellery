@@ -1,3 +1,6 @@
+/* eslint-disable no-undef */
+
+/* eslint-disable no-unused-vars */
 'use strict';
 
 (function () {
@@ -17,6 +20,9 @@
   var cartImg = document.querySelector('.header__tools-cart-image');
   var faqItem = document.querySelectorAll('.faq__list li');
   var faqText = document.querySelectorAll('.faq__list p');
+  var sliderContainer = document.querySelector('.swiper-container');
+  var sliderElement = document.querySelectorAll('.swiper-slide');
+  var sliderWrapper = document.querySelector('.swiper-wrapper');
   var filterContainer = document.querySelector('.catalog__filter');
   var filterTrigger = document.querySelector('.catalog__content-filter-trigger');
   var filterCloseBtn = document.querySelector('button.catalog__filter-close-btn');
@@ -89,6 +95,14 @@
     element.removeAttribute('href');
   };
 
+  var sliderOnLoad = function sliderOnLoad(element, cssclass) {
+    if (!element) {
+      return;
+    }
+
+    element.classList.remove(cssclass);
+  };
+
   var setListener = function setListener(element, type, handler) {
     if (!element) {
       return;
@@ -109,6 +123,13 @@
   loginOnLoad(loginBtn);
   loginOnLoad(loginBtnMobile);
   addCartOnLoad(addToCartBtn);
+  sliderOnLoad(sliderContainer, 'swiper-container--nojs');
+  sliderOnLoad(sliderWrapper, 'swiper-wrapper--nojs');
+
+  for (var s = 0; s < sliderElement.length; s++) {
+    sliderOnLoad(sliderElement[s], 'swiper-slide--nojs');
+  }
+
   setListener(loginBtn, 'click', function () {
     loginModal.classList.add('modal-login--visible');
     body.classList.add('modal-open');
@@ -311,39 +332,47 @@
   }
 
   productCardGallery();
-  var mainSlider = $('.new-in__slider');
-  mainSlider.addClass('owl-carousel').owlCarousel({
-    items: 4,
-    loop: false,
-    autoplay: false,
-    autoplayTimeout: 3000,
-    autoplayHoverPause: true,
-    nav: true,
-    slideBy: 4,
-    mouseDrag: false,
-    touchDrag: true,
-    pullDrag: false,
-    navElement: 'button',
-    slideTransition: '',
-    loadedClass: 'new-in__slider--loaded',
-    info: true,
-    dots: false,
-    navContainerClass: 'new-in__pagination',
-    navClass: ['new-in__pagination-previous', 'new-in__pagination-next'],
-    dotsClass: 'new-in__slider-page-nav',
-    dotClass: true,
-    responsive: {
-      0: {
-        items: 2,
-        margin: 30,
-        mouseDrag: true
-      },
+  var swiper = new Swiper('.swiper-container', {
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+      type: 'bullets',
+      renderBullet: function renderBullet(index, className) {
+        return '<span class="' + className + '">' + (index + 1) + '</span>';
+      }
+    },
+    navigation: {
+      nextEl: '.swiper-nav__btn--next',
+      prevEl: '.swiper-nav__btn--prev'
+    },
+    breakpoints: {
       1024: {
-        items: 4
+        slidesPerView: 4,
+        slidesPerGroup: 4,
+        spaceBetween: 30,
+        allowTouchMove: false
+      },
+      768: {
+        slidesPerView: 2,
+        slidesPerGroup: 2,
+        spaceBetween: 30,
+        allowTouchMove: true
+      },
+      320: {
+        slidesPerView: 2,
+        slidesPerGroup: 2,
+        spaceBetween: 30,
+        allowTouchMove: true,
+        pagination: {
+          el: '.swiper-pagination',
+          type: 'custom',
+          renderCustom: function renderCustom(_swiper, current, total) {
+            return current + ' of ' + total;
+          }
+        }
       }
     }
   });
-  mainSlider.owlCarousel();
   $(function () {
     var sliderRange = $('#slider-range');
     sliderRange.slider({
