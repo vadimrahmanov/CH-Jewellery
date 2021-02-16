@@ -302,6 +302,11 @@
     filterElementTrigger[j].addEventListener('click', function (e) {
       onClick(e, secEl, inpEl);
     });
+    filterElementTrigger[j].addEventListener('keydown', function (e) {
+      if (e.key === 'Enter') {
+        onClick(e, secEl, inpEl);
+      }
+    });
   }
 
   onLoadFilter(filterContainer);
